@@ -13,7 +13,7 @@ const Header = () => {
     <S.Container $isScrolled={scrollPosition}>
       <S.Wrapper>
         <div className="logo">
-          <img src="/src/assets/Logo_removebg.png" alt="로고" />
+          <img src="/Logo/Logo_removebg.png" alt="로고" />
         </div>
         <div className="intro_cafe">
           <span>카페 소개</span>
