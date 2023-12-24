@@ -1,7 +1,12 @@
 import "./App.css";
+import Router from "./routes/Router";
 
 function App() {
-  return <><div>맴맴</div></>;
+  return (
+    <>
+      <Router />
+    </>
+  );
 }
 
 export default App;
