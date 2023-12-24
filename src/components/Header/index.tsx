@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
+import Logo from "/Logo/Logo_removebg.png";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
     <S.Container $isScrolled={scrollPosition}>
       <S.Wrapper>
         <div className="logo">
-          <img src="/Logo/Logo_removebg.png" alt="로고" />
+          <img src={Logo} alt="로고" />
         </div>
         <div className="intro_cafe">
           <span>카페 소개</span>
