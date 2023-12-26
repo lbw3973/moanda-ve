@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "NanumSquareNeo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./NanumSquareNeo-Variable.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
