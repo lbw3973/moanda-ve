@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div<{ $isScrolled: boolean }>`
   width: 100%;
-  height: 80px;
+  height: ${props => (props.$isScrolled === true ? "60px" : "80px")};
 
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: ${props => (props.$isScrolled === true ? "#fff9eb" : "transparent")};
+  background-color: ${props => (props.$isScrolled === true ? "#fff" : "transparent")};
+  ${props => props.$isScrolled && "box-shadow: 0px 4px 13px -5px rgba(50,50,93,0.25);"}
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-family: "NanumSquareNeo";
 
   transition-duration: 500ms;
 `;
@@ -25,7 +28,7 @@ export const Wrapper = styled.div`
 
   .logo {
     img {
-      height: 80px;
+      width: 120px;
     }
   }
 

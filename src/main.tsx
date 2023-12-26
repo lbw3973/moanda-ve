@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "./font/font.css";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
-import Logo from "/Logo/Logo_removebg.png";
+import Logo from "/Logo/Logo_remove_bg.png";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
