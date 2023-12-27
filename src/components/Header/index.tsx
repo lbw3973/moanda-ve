@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
 import Logo from "/Logo/Logo_remove_bg.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -17,16 +18,16 @@ const Header = () => {
           <img src={Logo} alt="로고" />
         </div>
         <div className="intro_cafe">
-          <span>카페 소개</span>
+          <Link to={"/menu"}>카페 소개</Link>
         </div>
         <div className="intro_menu">
-          <span>메뉴 소개</span>
+          <Link to={"/menu"}>메뉴 소개</Link>
         </div>
         <div className="gallery">
-          <span>갤러리</span>
+          <Link to={"/menu"}>갤러리</Link>
         </div>
         <div className="notice">
-          <span>공지사항</span>
+          <Link to={"/menu"}>공지사항</Link>
         </div>
       </S.Wrapper>
     </S.Container>

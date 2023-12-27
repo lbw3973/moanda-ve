@@ -6,3 +6,8 @@ body {
 main {
   /* width: 1000px; */
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
