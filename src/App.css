@@ -11,3 +11,12 @@ a {
   text-decoration: none;
   color: black;
 }
+/* Chrome, Safari, Edge 브라우저에 적용 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox 브라우저에 적용 */
+html {
+  scrollbar-width: none;
+}

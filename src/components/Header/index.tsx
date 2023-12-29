@@ -18,16 +18,16 @@ const Header = () => {
           <img src={Logo} alt="로고" />
         </div>
         <div className="intro_cafe">
-          <Link to={"/menu"}>카페 소개</Link>
+          <Link to={"/intro"}>카페 소개</Link>
         </div>
         <div className="intro_menu">
           <Link to={"/menu"}>메뉴 소개</Link>
         </div>
         <div className="gallery">
-          <Link to={"/menu"}>갤러리</Link>
+          <Link to={"/gallery"}>갤러리</Link>
         </div>
         <div className="notice">
-          <Link to={"/menu"}>공지사항</Link>
+          <Link to={"/notice"}>공지사항</Link>
         </div>
       </S.Wrapper>
     </S.Container>
