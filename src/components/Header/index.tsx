@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
 import Logo from "/Logo/Logo_remove_bg.png";
+import HamburgerMenu from "../HamburgerMenu";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -29,6 +30,7 @@ const Header = () => {
           <span>공지사항</span>
         </div>
       </S.Wrapper>
+      <HamburgerMenu />
     </S.Container>
   );
 };
