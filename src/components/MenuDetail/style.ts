@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const StoreDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
   div {
     display: flex;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 10px;
   }
 `;
 
 export const MenuImage = styled.img`
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
 `;
 
 export const MenuItem = styled.div`
@@ -23,4 +21,5 @@ export const MenuItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 `;

@@ -6,9 +6,9 @@ import * as S from "./style";
 const Menu = () => {
   return (
     <S.MenuMain>
-      <S.MenuItemTitle>Desert</S.MenuItemTitle>
+      <S.MenuItemTitle>비건휘낭시에</S.MenuItemTitle>
       <MenuDetail />
-      <S.MenuItemTitle>Beverage</S.MenuItemTitle>
+      <S.MenuItemTitle>비건쿠키</S.MenuItemTitle>
       <MenuDetail />
     </S.MenuMain>
   );
