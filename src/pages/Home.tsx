@@ -1,10 +1,12 @@
+import Swiper from "../components/Swiper";
 import * as S from "./style";
 
 const Home = () => {
   return (
-    <div>
+    <section>
+      <Swiper />
       <S.tempDIV>Home</S.tempDIV>
-    </div>
+    </section>
   );
 };
 
