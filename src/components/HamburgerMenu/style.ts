@@ -1,31 +1,44 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
+  @media ${({ theme }) => theme.windowSize.large} {
+    display: none;
+  }
   display: flex;
   align-items: center;
+  z-index: 50;
 `;
 
-export const ClickArea = styled.button<{ isClicked: boolean }>`
+export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 34px;
-  height: 20px;
+  height: 28px;
   border: none;
   background-color: transparent;
   cursor: pointer;
-
-  .areaElement {
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    transition: all 200ms ease-out;
-  }
 `;
 
-export const AreaElement = styled.span<{ index: number }>`
+export const AreaElement = styled.span<{
+  $isClicked: boolean;
+  index: number;
+  rotate: number;
+  opacity: number;
+  translate: number;
+}>`
   width: 100%;
   height: 2px;
-  background-color: #000;
+  background-color: #654f43;
   transition: all 200ms ease-out;
+
+  ${props =>
+    props.$isClicked &&
+    css`
+      rotate: ${props.rotate}deg;
+      opacity: ${props.opacity};
+      transform: translateY(${props.translate}px) translateX(-25%);
+      width: 105%;
+      background-color: #fff9eb;
+    `}
 `;
