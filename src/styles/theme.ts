@@ -12,9 +12,15 @@ const fontSize = {
   lg: "20px",
 };
 
+const color = {
+  primary_light: "#fff9eb",
+  primary_normal: "#654f43",
+};
+
 const theme = {
   windowSize,
   fontSize,
+  color,
 };
 
 export default theme;

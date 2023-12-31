@@ -11,7 +11,7 @@ import image10 from "/Mobile/Main/img_10.jpg";
 import image11 from "/Mobile/Main/img_11.jpg";
 import image12 from "/Mobile/Main/img_12.jpg";
 
-export const mainImageList = [
+export const mainImageList_Mobile = [
   image1,
   image2,
   image3,

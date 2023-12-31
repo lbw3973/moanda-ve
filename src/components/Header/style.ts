@@ -7,7 +7,7 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: #fff9eb;
+  background-color: ${({ theme }) => theme.color.primary_light};
   box-shadow: 0px 4px 13px -5px rgba(50, 50, 93, 0.25);
 
   display: flex;
@@ -49,7 +49,7 @@ export const Wrapper = styled.div`
         transition-duration: 300ms;
         @media (hover: hover) {
           &:hover {
-            color: #654f43;
+            color: ${({ theme }) => theme.color.primary_normal};
           }
         }
       }
@@ -93,7 +93,7 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     height: 100%;
 
     padding-top: 25%;
-    background-color: #654f43;
+    background-color: ${({ theme }) => theme.color.primary_normal};
     opacity: ${({ $isClicked }) => ($isClicked ? "1" : "0")};
     transition: all 0.3s ease-in-out;
 
@@ -104,7 +104,7 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
       transform: translateY(${({ $isClicked }) => ($isClicked ? "0%" : "-100%")});
       transition: transform 0.3s ease-in-out;
       a {
-        color: #fff9eb;
+        color: ${({ theme }) => theme.color.primary_light};
       }
     }
   }

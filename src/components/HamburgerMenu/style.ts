@@ -29,7 +29,7 @@ export const AreaElement = styled.span<{
 }>`
   width: 100%;
   height: 2px;
-  background-color: #654f43;
+  background-color: ${({ theme }) => theme.color.primary_normal};
   transition: all 200ms ease-out;
 
   ${props =>
@@ -39,6 +39,6 @@ export const AreaElement = styled.span<{
       opacity: ${props.opacity};
       transform: translateY(${props.translate}px) translateX(-25%);
       width: 105%;
-      background-color: #fff9eb;
+      background-color: ${({ theme }) => theme.color.primary_light};
     `}
 `;
