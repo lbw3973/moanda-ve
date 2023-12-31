@@ -54,9 +54,12 @@ export const Wrapper = styled.div`
         }
       }
     }
+    .toHome {
+      display: none;
+    }
   }
 
-  /* Tablie */
+  /* Tablet */
   @media ${({ theme }) => theme.windowSize.medium} {
     img {
       width: 90px;

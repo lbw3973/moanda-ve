@@ -4,6 +4,13 @@ import Logo from "/Logo/Logo.jpg";
 import HamburgerMenu from "../HamburgerMenu";
 import { Link } from "react-router-dom";
 
+const Menus = {
+  intro: "카페 소개",
+  menu: "메뉴 소개",
+  gallery: "갤러리",
+  notice: "공지사항",
+};
+
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -20,18 +27,18 @@ const Header = () => {
       <S.Wrapper>
         <img src={Logo} alt="로고" />
         <S.Menus $isClicked={isClicked}>
-          <div className="intro_cafe">
-            <Link to={"/intro"}>카페 소개</Link>
+          <div className="toHome">
+            <Link to={"/"} onClick={() => setIsClicked(false)}>
+              HOME
+            </Link>
           </div>
-          <div className="intro_menu">
-            <Link to={"/menu"}>메뉴 소개</Link>
-          </div>
-          <div className="gallery">
-            <Link to={"/gallery"}>갤러리</Link>
-          </div>
-          <div className="notice">
-            <Link to={"/notice"}>공지사항</Link>
-          </div>
+          {Object.entries(Menus).map(([key, value]) => (
+            <div className={key} key={key}>
+              <Link to={`/${key}`} onClick={() => setIsClicked(false)}>
+                {value}
+              </Link>
+            </div>
+          ))}
         </S.Menus>
       </S.Wrapper>
       <S.WindowSizeMobile></S.WindowSizeMobile>
