@@ -22,5 +22,6 @@ const theme = {
   fontSize,
   color,
 };
+export type Theme = typeof theme;
 
 export default theme;
