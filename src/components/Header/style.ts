@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.header<{ $isScrolled: boolean }>`
   width: 100%;
-  height: ${props => (props.$isScrolled === true ? "60px" : "80px")};
+  height: ${({ $isScrolled }) => ($isScrolled ? "60px" : "80px")};
 
   position: fixed;
   top: 0;
@@ -20,66 +20,99 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
   transition-duration: 300ms;
 
-  /* 테블릿, 모바일 */
+  /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
     width: calc(100% - 20px);
+    justify-content: space-between;
   }
 `;
 
 export const Wrapper = styled.div`
-  width: 1000px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
+  position: relative;
+  /* PC */
+  @media ${({ theme }) => theme.windowSize.large} {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
 
-  .logo {
     img {
       width: 120px;
     }
-  }
 
-  div {
-    span {
-      color: #242424;
-      cursor: pointer;
-      padding: 4px;
-      transition-duration: 300ms;
-      @media (hover: hover) {
-        &:hover {
-          color: #654f43;
+    div {
+      a {
+        color: #242424;
+        cursor: pointer;
+        padding: 4px;
+        transition-duration: 300ms;
+        @media (hover: hover) {
+          &:hover {
+            color: #654f43;
+          }
         }
       }
     }
   }
 
-  /* 테블릿, 모바일 */
+  /* Tablie */
   @media ${({ theme }) => theme.windowSize.medium} {
-    width: 100%;
-    .logo {
-      img {
-        width: 90px;
-      }
+    img {
+      width: 90px;
+      z-index: 50;
     }
 
     div {
-      span {
+      a {
         font-size: 14px;
       }
     }
+  }
 
-    @media ${({ theme }) => theme.windowSize.small} {
-      .logo {
-        img {
-          width: 75px;
-        }
-      }
+  /* Mobile */
+  @media ${({ theme }) => theme.windowSize.small} {
+  }
+`;
 
-      div {
-        span {
-          font-size: 12px;
-        }
+export const Menus = styled.div<{ $isClicked: boolean }>`
+  /* PC */
+  @media ${({ theme }) => theme.windowSize.large} {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* Tablet, Mobile */
+  @media ${({ theme }) => theme.windowSize.medium} {
+    visibility: ${({ $isClicked }) => ($isClicked ? "inherit" : "hidden")};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+
+    padding-top: 25%;
+    background-color: #654f43;
+    opacity: ${({ $isClicked }) => ($isClicked ? "1" : "0")};
+    transition: all 0.3s ease-in-out;
+
+    div {
+      width: 100%;
+      height: 56px;
+      text-align: center;
+      transform: translateY(${({ $isClicked }) => ($isClicked ? "0%" : "-100%")});
+      transition: transform 0.3s ease-in-out;
+      a {
+        color: #fff9eb;
       }
     }
+  }
+`;
+
+export const WindowSizeMobile = styled.div`
+  @media ${({ theme }) => theme.windowSize.medium} {
+    width: 34px;
+    height: 100%;
   }
 `;
