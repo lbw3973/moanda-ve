@@ -22,7 +22,6 @@ export const ClickArea = styled.button`
 
 export const AreaElement = styled.span<{
   $isClicked: boolean;
-  index: number;
   rotate: number;
   opacity: number;
   translate: number;

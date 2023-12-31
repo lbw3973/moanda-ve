@@ -16,7 +16,6 @@ const HamburgerMenu = ({
           <S.AreaElement
             key={index}
             $isClicked={isClicked}
-            index={index}
             rotate={style.rotate as number}
             opacity={style.opacity as number}
             translate={style.translateY as number}
