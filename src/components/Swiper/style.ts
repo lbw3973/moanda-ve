@@ -5,7 +5,6 @@ export const temp = styled.div``;
 
 export const swiper = styled(Swiper)`
   width: 100%;
-  height: 520px;
 
   .swiper-slide {
     img {
@@ -14,6 +13,9 @@ export const swiper = styled(Swiper)`
   }
   .swiper-pagination-bullet-active {
     background-color: ${({ theme }) => theme.color.primary_normal};
+  }
+  @media ${({theme}) => theme.windowSize.medium} {
+    height: 520px;
   }
 `;
 
