@@ -1,5 +1,5 @@
 const Intro = () => {
-  return <div>index</div>;
+  return <section>index</section>;
 };
 
 export default Intro;
