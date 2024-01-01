@@ -61,9 +61,10 @@ export const Wrapper = styled.div`
 
   /* Tablet */
   @media ${({ theme }) => theme.windowSize.medium} {
-    img {
-      width: 90px;
-      z-index: 50;
+    a {
+      img {
+        width: 90px;
+      }
     }
 
     div {

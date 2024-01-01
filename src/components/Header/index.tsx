@@ -25,7 +25,9 @@ const Header = () => {
     <S.Container $isScrolled={scrollPosition}>
       <HamburgerMenu isClicked={isClicked} setIsClicked={setIsClicked} />
       <S.Wrapper>
-        <img src={Logo} alt="로고" />
+        <Link to={"/"}>
+          <img src={Logo} alt="로고" />
+        </Link>
         <S.Menus $isClicked={isClicked}>
           <div className="toHome">
             <Link to={"/"} onClick={() => setIsClicked(false)}>
