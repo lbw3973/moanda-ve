@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 interface IMenuModalContainerProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
-export const MenuModalSection = styled.div<IMenuModalContainerProps>`
+export const MenuModalSection = styled.section<IMenuModalContainerProps>`
   width: 100%;
   height: 100%;
   position: fixed;
@@ -13,8 +13,8 @@ export const MenuModalSection = styled.div<IMenuModalContainerProps>`
   align-items: center;
   left: 0;
   top: 0;
-  transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  transform: translateY(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
+  opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
   transition: all 0.3s ease-out;
   background-color: gray;
 `;

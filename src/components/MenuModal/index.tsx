@@ -14,7 +14,7 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose }) => {
   }, [openState]); // 의존성 배열에 'openState' 추가
 
   return (
-    <S.MenuModalSection isOpen={isOpen}>
+    <S.MenuModalSection $isOpen={isOpen}>
       <S.MenuModalContainer>
         <S.MenuModalHeader>
           <h1>오리지널 쿠키</h1>

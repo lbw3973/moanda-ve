@@ -9,7 +9,7 @@ export const MenuItemTitle = styled.h1`
   font-family: "NanumSquareNeo";
 `;
 
-export const MenuMain = styled.div`
+export const MenuSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;

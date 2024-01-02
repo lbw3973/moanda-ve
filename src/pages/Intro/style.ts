@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const IntroMain = styled.div``;
+export const IntroSection = styled.section``;

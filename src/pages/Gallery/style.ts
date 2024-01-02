@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const GalleryMain = styled.div``;
+export const GallerySection = styled.section``;

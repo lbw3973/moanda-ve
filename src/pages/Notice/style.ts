@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const NoticeMain = styled.div``;
+export const NoticeSection = styled.section``;

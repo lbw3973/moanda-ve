@@ -1,9 +1,7 @@
-import React from "react";
-
 import * as S from "./style";
 
 const Notice = () => {
-  return <div>Notice</div>;
+  return <S.NoticeSection>Notice</S.NoticeSection>;
 };
 
 export default Notice;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as S from "./style";
 import { menuFinancierItems, menuCookieItems } from "../../MenuData";
 import MenuModal from "../MenuModal";
