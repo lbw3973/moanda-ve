@@ -1,5 +1,7 @@
+import * as S from "./style";
+
 const Intro = () => {
-  return <section>index</section>;
+  return <S.IntroSection>Intro</S.IntroSection>;
 };
 
 export default Intro;

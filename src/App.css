@@ -1,4 +1,7 @@
-html,
+html {
+  scrollbar-width: none;
+}
+
 body {
   background-color: #fff9eb;
 }
@@ -8,4 +11,6 @@ a {
   color: black;
 }
 
-main {}
+::-webkit-scrollbar {
+  display: none;
+}
