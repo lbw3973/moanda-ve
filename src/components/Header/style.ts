@@ -93,7 +93,7 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 150px;
     height: 100%;
 
     padding-top: 25%;
