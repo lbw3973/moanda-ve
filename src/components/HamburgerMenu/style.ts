@@ -39,7 +39,6 @@ export const AreaElement = styled.span<{
       rotate: ${props.rotate}deg;
       opacity: ${props.opacity};
       transform: translateY(${props.translate}px) translateX(-25%);
-      width: 105%;
       background-color: ${({ theme }) => theme.color.primary_light};
     `}
 `;
