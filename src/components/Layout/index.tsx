@@ -6,9 +6,9 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <S.Page>
+      <S.Main>
         <Outlet />
-      </S.Page>
+      </S.Main>
     </>
   );
 };
