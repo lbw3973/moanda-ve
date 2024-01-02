@@ -38,7 +38,6 @@ export const AreaElement = styled.span<{
       opacity: ${props.opacity};
       /* transform: translateY(${props.translate}px) translateX(-25%); */
       transform: translateY(${props.translate}px) translateX(-15%);
-      width: 105%;
       background-color: ${({ theme }) => theme.color.primary_light};
     `}
 `;
