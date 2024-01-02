@@ -32,7 +32,7 @@ export const AreaElement = styled.span<{
   width: 100%;
   height: 2px;
   background-color: ${({ theme }) => theme.color.primary_normal};
-  transition: all 200ms ease-out;
+  transition: all 1s ease-out;
 
   ${props =>
     props.$isClicked &&
