@@ -1,22 +1,16 @@
-html,
-body {
-  background-color: #fff9eb;
+html {
+  scrollbar-width: none;
 }
 
-main {
-  /* width: 1000px; */
+body {
+  background-color: #fff9eb;
 }
 
 a {
   text-decoration: none;
   color: black;
 }
-/* Chrome, Safari, Edge 브라우저에 적용 */
+
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* Firefox 브라우저에 적용 */
-html {
-  scrollbar-width: none;
 }

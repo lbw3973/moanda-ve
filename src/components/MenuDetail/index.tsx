@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as S from "./style";
-import { menuFinancierItems, menuCookieItems } from "../../MenuData";
+import { menuFinancierItems, menuCookieItems } from "../../util/MenuData";
 import MenuModal from "../MenuModal";
 
 const MenuDetail = () => {

@@ -5,6 +5,7 @@ import Menu from "../pages/Menu/index";
 import Notice from "../pages/Notice";
 import Gallery from "../pages/Gallery";
 import Intro from "../pages/Intro";
+import NotFound from "../pages/NotFound";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/notice" element={<Notice />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

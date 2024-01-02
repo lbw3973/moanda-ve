@@ -20,7 +20,7 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose }) => {
           <h1>오리지널 쿠키</h1>
           <S.MenuModalExit onClick={onClose}>X</S.MenuModalExit>
         </S.MenuModalHeader>
-        <S.MenuModalImage src="../../public/menu/cookie_1.jfif" alt="" />
+        <S.MenuModalImage src="/menu/cookie_1.jfif" alt="" />
 
         <h3>쌀가루 + 아몬드가루 + 수제캐러멜 + 소금 </h3>
         <h3>NO 계란 버터 우유 설탕 색소 밀가루</h3>
