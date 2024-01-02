@@ -5,7 +5,6 @@ export const Container = styled.div`
     display: none;
   }
   z-index: 50;
-  width: 34px;
 `;
 
 export const ClickArea = styled.button`
