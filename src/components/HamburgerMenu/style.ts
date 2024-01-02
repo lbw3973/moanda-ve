@@ -4,6 +4,9 @@ export const Container = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
     display: none;
   }
+  display: flex;
+  align-items: center;
+  width: 22px;
   z-index: 50;
 `;
 
@@ -11,7 +14,7 @@ export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
+  width: 100%;
   height: 20px;
   padding: 0;
   border: none;
