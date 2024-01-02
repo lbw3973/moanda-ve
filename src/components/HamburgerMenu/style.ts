@@ -6,7 +6,8 @@ export const Container = styled.div`
   }
   display: flex;
   align-items: center;
-  width: 22px;
+  justify-content: center;
+  width: 34px;
   z-index: 50;
 `;
 
@@ -14,7 +15,7 @@ export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 22px;
   height: 20px;
   padding: 0;
   border: none;
