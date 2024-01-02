@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
+    -webkit-display: none;
     display: none;
   }
   display: flex;
@@ -10,6 +11,7 @@ export const Container = styled.div`
 `;
 
 export const ClickArea = styled.button`
+  -webkit-display: flex;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
