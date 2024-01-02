@@ -13,7 +13,7 @@ export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50px;
+  width: 34px;
   height: 20px;
   border: none;
   background-color: transparent;
@@ -36,8 +36,8 @@ export const AreaElement = styled.span<{
     css`
       rotate: ${props.rotate}deg;
       opacity: ${props.opacity};
-      /* transform: translateY(${props.translate}px) translateX(-25%); */
-      transform: translateY(${props.translate}px) translateX(-15%);
+      transform: translateY(${props.translate}px) translateX(-25%);
+      /* transform: translateY(${props.translate}px) translateX(-15%); */
       background-color: ${({ theme }) => theme.color.primary_light};
     `}
 `;
