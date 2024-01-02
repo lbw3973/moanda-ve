@@ -4,6 +4,9 @@ export const Container = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
     display: none;
   }
+  display: flex;
+  align-items: center;
+  width: 34px;
   z-index: 50;
 `;
 
