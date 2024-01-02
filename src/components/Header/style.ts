@@ -22,7 +22,7 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
   /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
-    width: calc(100% - 20px);
+    width: calc(100vw - 20px);
     justify-content: space-between;
   }
 `;
@@ -46,7 +46,6 @@ export const Wrapper = styled.div`
         color: #242424;
         cursor: pointer;
         padding: 4px;
-        transition-duration: 300ms;
         @media (hover: hover) {
           &:hover {
             color: ${({ theme }) => theme.color.primary_normal};
@@ -99,14 +98,14 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     padding-top: 25%;
     background-color: ${({ theme }) => theme.color.primary_normal};
     opacity: ${({ $isClicked }) => ($isClicked ? "1" : "0")};
-    transition: all 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
 
     div {
       width: 100%;
       height: 56px;
       text-align: center;
       transform: translateY(${({ $isClicked }) => ($isClicked ? "0%" : "-100%")});
-      transition: transform 0.3s ease-in-out;
+      transition: transform 1s ease-in-out;
       a {
         color: ${({ theme }) => theme.color.primary_light};
       }

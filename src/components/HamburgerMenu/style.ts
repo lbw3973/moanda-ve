@@ -6,6 +6,8 @@ export const Container = styled.div`
   }
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 34px;
   z-index: 50;
 `;
 
@@ -13,8 +15,9 @@ export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 34px;
+  width: 22px;
   height: 20px;
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -29,7 +32,7 @@ export const AreaElement = styled.span<{
   width: 100%;
   height: 2px;
   background-color: ${({ theme }) => theme.color.primary_normal};
-  transition: all 200ms ease-out;
+  transition: all 1s ease-out;
 
   ${props =>
     props.$isClicked &&
