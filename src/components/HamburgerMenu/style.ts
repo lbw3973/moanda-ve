@@ -4,17 +4,17 @@ export const Container = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
     display: none;
   }
-  display: flex;
-  align-items: center;
   z-index: 50;
+  width: 34px;
 `;
 
 export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 34px;
+  width: 28px;
   height: 20px;
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
