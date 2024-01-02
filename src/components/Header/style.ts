@@ -22,7 +22,7 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
   /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
-    width: calc(100% - 20px);
+    width: calc(100vw - 20px);
     justify-content: space-between;
   }
 `;
