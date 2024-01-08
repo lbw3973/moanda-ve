@@ -1,15 +1,15 @@
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import * as S from "./style";
-import location from "@/constants/location.json";
+import constant_base from "@/constants/base.json";
 
 const LocationCard = () => {
   return (
     <S.LocationCardContainer>
       <Map
-        center={{ lat: location.latitude, lng: location.longitude }}
+        center={{ lat: constant_base.Latitude, lng: constant_base.Longitude }}
         style={{ width: "100%", height: "100%", borderRadius: "10px" }}
       >
-        <MapMarker position={{ lat: location.latitude, lng: location.longitude }}></MapMarker>
+        <MapMarker position={{ lat: constant_base.Latitude, lng: constant_base.Longitude }}></MapMarker>
       </Map>
     </S.LocationCardContainer>
   );

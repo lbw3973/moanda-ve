@@ -1,9 +1,9 @@
 import * as S from "./style";
-import constant from "@/constants/footer.json";
+import constant from "@/constants/base.json";
 import Logo from "/Logo/Logo.jpg";
 import { footerImageList } from "@/util/importImage";
 
-const link = [constant.naverStore, constant.instagram, constant.kakaoChannel];
+const link = [constant.NaverStore, constant.Instagram, constant.KakaoChannel];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
