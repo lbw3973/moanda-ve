@@ -1,5 +1,5 @@
 const windowSize = {
-  small: "screen and (max-width: 600px)",
+  small: "screen and (max-width: 450px)",
   medium: "screen and (max-width: 768px)",
   large: "screen and (min-width: 769px)",
 };
