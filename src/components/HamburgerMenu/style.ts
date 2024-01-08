@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 22px;
   height: 20px;
   padding: 0;

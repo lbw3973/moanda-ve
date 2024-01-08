@@ -118,6 +118,8 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
         display: inline-block;
         color: ${({ theme }) => theme.color.primary_light};
         width: 90%;
+        height: 80%;
+        line-height: 44.8px;
         border-radius: 10px;
       }
       .active {
