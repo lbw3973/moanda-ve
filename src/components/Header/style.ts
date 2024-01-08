@@ -98,14 +98,14 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     padding-top: 25%;
     background-color: ${({ theme }) => theme.color.primary_normal};
     opacity: ${({ $isClicked }) => ($isClicked ? "1" : "0")};
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     div {
       width: 100%;
       height: 56px;
       text-align: center;
       transform: translateY(${({ $isClicked }) => ($isClicked ? "0%" : "-100%")});
-      transition: transform 1s ease-in-out;
+      transition: transform 0.3s ease-in-out;
       a {
         color: ${({ theme }) => theme.color.primary_light};
       }
