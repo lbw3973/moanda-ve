@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as S from "./style";
 import Logo from "/Logo/Logo.jpg";
 import HamburgerMenu from "../HamburgerMenu";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menus = {
   intro: "카페 소개",
@@ -36,9 +36,13 @@ const Header = () => {
           </div>
           {Object.entries(Menus).map(([key, value]) => (
             <div className={key} key={key}>
-              <Link to={`/${key}`} onClick={() => setIsClicked(false)}>
+              <NavLink
+                to={`/${key}`}
+                onClick={() => setIsClicked(false)}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 {value}
-              </Link>
+              </NavLink>
             </div>
           ))}
         </S.Menus>
