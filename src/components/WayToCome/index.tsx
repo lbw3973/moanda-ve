@@ -2,9 +2,14 @@ import * as S from "./style";
 import LocationCard from "../LocationCard";
 import constant_base from "@/constants/base.json";
 import constant_intro from "@/constants/intro.json";
-import React from "react";
+import React, { MouseEvent } from "react";
+import { FaRegCopy } from "react-icons/fa";
 
 const WayToCome = () => {
+  const handleClipboardWrite = (e: MouseEvent<HTMLSpanElement>) => {
+    const text = e.currentTarget.textContent ?? "";
+    navigator.clipboard.writeText(text);
+  };
   return (
     <S.LocationContainer>
       <LocationCard />
@@ -25,7 +30,10 @@ const WayToCome = () => {
         </div>
         <div className="contact">
           <h3>전화번호</h3>
-          <span>{constant_base.Contact}</span>
+          <span onClick={handleClipboardWrite}>
+            {constant_base.Contact}
+            <FaRegCopy />
+          </span>
         </div>
       </S.InformContainer>
     </S.LocationContainer>

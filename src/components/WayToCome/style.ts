@@ -36,4 +36,13 @@ export const InformContainer = styled.div`
       line-height: 20px;
     }
   }
+  .contact {
+    span {
+      cursor: pointer;
+      svg {
+        margin-left: 6px;
+        transform: translateY(2px);
+      }
+    }
+  }
 `;
