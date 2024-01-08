@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 
+type ItemType = {
+  src: string;
+  name: string;
+  title: string;
+  des: string;
+};
+
 interface IMenuModalProps {
   openState: boolean; // 'isOpen'을 'openState'로 수정
   onClose: () => void;
+  item: ItemType | null;
 }
 
-const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose }) => {
+const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     setOpen(openState);
-  }, [openState]); // 의존성 배열에 'openState' 추가
+  }, [openState]);
 
   return (
     <S.MenuModalSection $isOpen={isOpen}>
       <S.MenuModalContainer>
         <S.MenuModalHeader>
-          <h1>오리지널 쿠키</h1>
+          <h1>{item?.name}</h1>
           <S.MenuModalExit onClick={onClose}>X</S.MenuModalExit>
         </S.MenuModalHeader>
-        <S.MenuModalImage src="/menu/cookie_1.jfif" alt="" />
-
-        <h3>쌀가루 + 아몬드가루 + 수제캐러멜 + 소금 </h3>
-        <h3>NO 계란 버터 우유 설탕 색소 밀가루</h3>
-        <h3> YES 두유 식물성오일 두부 쌀가루 </h3>
+        <S.MenuModalImage src={item?.src} alt={item?.name} />
+        <h3>{item?.title}</h3>
+        <h3>{item?.des}</h3>
       </S.MenuModalContainer>
     </S.MenuModalSection>
   );

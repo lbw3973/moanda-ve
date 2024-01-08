@@ -6,7 +6,15 @@ interface IModalProps {
 
 export const StoreDetail = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media ${({ theme }) => theme.windowSize.small} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 30px;
 
   div {
     display: flex;
@@ -18,9 +26,6 @@ export const MenuImage = styled.img`
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  :hover {
-    border-radius: 20%;
-  }
 `;
 
 export const MenuItem = styled.div`
@@ -29,6 +34,12 @@ export const MenuItem = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 export const MenuItemTitle = styled.h1`
