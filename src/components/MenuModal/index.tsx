@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 
+const AreaElements = [
+  { rotate: -45, translateY: 2 },
+  { rotate: 45, translateY: -2 },
+];
+
 type ItemType = {
   src: string;
   name: string;
@@ -23,10 +28,19 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
 
   return (
     <S.MenuModalSection $isOpen={isOpen}>
-      <S.MenuModalContainer>
+      <S.MenuModalContainer $isOpen={isOpen}>
         <S.MenuModalHeader>
-          <h1>{item?.name}</h1>
-          <S.MenuModalExit onClick={onClose}>X</S.MenuModalExit>
+          <S.MenuModalTitle>{item?.name}</S.MenuModalTitle>
+          {/* <S.MenuModalExit onClick={onClose}>X</S.MenuModalExit> */}
+          <S.MenuModalExit onClick={onClose}>
+            {AreaElements.map((style, index) => (
+              <S.AreaElement
+                key={index}
+                rotate={style.rotate as number}
+                translate={style.translateY as number}
+              ></S.AreaElement>
+            ))}
+          </S.MenuModalExit>
         </S.MenuModalHeader>
         <S.MenuModalImage src={item?.src} alt={item?.name} />
         <h3>{item?.title}</h3>
