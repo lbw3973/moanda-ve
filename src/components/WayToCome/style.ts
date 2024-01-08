@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const LocationHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-family: "GmarketSans";
+  font-size: 30px;
+  color: ${({ theme }) => theme.color.primary_normal};
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    font-size: 24px;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 75%;
+    height: 1px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateX(15%);
+  }
+`;
+
 export const LocationContainer = styled.div`
   font-family: "NanumSquareNeo";
   color: #242424;
@@ -7,7 +29,6 @@ export const LocationContainer = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
     height: 280px;
     display: flex;
-    justify-content: center;
     gap: 20px;
   }
   @media ${({ theme }) => theme.windowSize.medium} {
@@ -48,5 +69,9 @@ export const InformContainer = styled.div`
   .clickNotice {
     color: ${({ theme }) => theme.color.primary_normal};
     font-weight: 600;
+  }
+
+  @media ${({ theme }) => theme.windowSize.large} {
+    width: 50%;
   }
 `;

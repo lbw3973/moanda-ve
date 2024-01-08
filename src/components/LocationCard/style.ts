@@ -8,7 +8,7 @@ export const LocationCardContainer = styled.div`
   border-radius: 10px;
 
   @media ${({ theme }) => theme.windowSize.large} {
-    width: 30%;
+    width: 50%;
   }
   @media ${({ theme }) => theme.windowSize.medium} {
     width: 90%;
