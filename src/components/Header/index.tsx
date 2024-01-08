@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import * as S from "./style";
 import Logo from "/Logo/Logo.jpg";
 import HamburgerMenu from "../HamburgerMenu";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menus = {
   intro: "카페 소개",
   menu: "메뉴 소개",
+  gift: "답례품",
   gallery: "갤러리",
-  notice: "공지사항",
 };
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScrollPosition(window.scrollY > 1);
+      setScrollPosition(window.scrollY > 88);
     });
   }, []);
 
@@ -30,15 +30,23 @@ const Header = () => {
         </Link>
         <S.Menus $isClicked={isClicked}>
           <div className="toHome">
-            <Link to={"/"} onClick={() => setIsClicked(false)}>
+            <NavLink
+              to={"/"}
+              onClick={() => setIsClicked(false)}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               HOME
-            </Link>
+            </NavLink>
           </div>
           {Object.entries(Menus).map(([key, value]) => (
             <div className={key} key={key}>
-              <Link to={`/${key}`} onClick={() => setIsClicked(false)}>
+              <NavLink
+                to={`/${key}`}
+                onClick={() => setIsClicked(false)}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 {value}
-              </Link>
+              </NavLink>
             </div>
           ))}
         </S.Menus>

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import * as S from "./style";
 
-const AreaElements = [{ rotate: -45, translateY: 5.5 }, { opacity: 0 }, { rotate: 45, translateY: -5.5 }];
+const AreaElements = [{ rotate: -45, translateY: 4.5 }, { opacity: 0 }, { rotate: 45, translateY: -4.5 }];
 const HamburgerMenu = ({
   isClicked,
   setIsClicked,

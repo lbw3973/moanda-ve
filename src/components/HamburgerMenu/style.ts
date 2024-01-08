@@ -6,15 +6,18 @@ export const Container = styled.div`
   }
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 34px;
   z-index: 50;
 `;
 
 export const ClickArea = styled.button`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 34px;
+  justify-content: space-around;
+  width: 22px;
   height: 20px;
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -37,7 +40,6 @@ export const AreaElement = styled.span<{
       rotate: ${props.rotate}deg;
       opacity: ${props.opacity};
       transform: translateY(${props.translate}px) translateX(-25%);
-      width: 105%;
       background-color: ${({ theme }) => theme.color.primary_light};
     `}
 `;

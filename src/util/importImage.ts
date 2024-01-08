@@ -10,6 +10,9 @@ import image9 from "/Mobile/Main/img_9.jpg";
 import image10 from "/Mobile/Main/img_10.jpg";
 import image11 from "/Mobile/Main/img_11.jpg";
 import image12 from "/Mobile/Main/img_12.jpg";
+import Naver from "/Logo/naver.jpg";
+import Instagram from "/Logo/instagram.png";
+import kakao from "/Logo/kakao.png";
 
 export const mainImageList_Mobile = [
   image1,
@@ -25,3 +28,5 @@ export const mainImageList_Mobile = [
   image11,
   image12,
 ];
+
+export const footerImageList = [Naver, Instagram, kakao];
