@@ -45,4 +45,8 @@ export const InformContainer = styled.div`
       }
     }
   }
+  .clickNotice {
+    color: ${({ theme }) => theme.color.primary_normal};
+    font-weight: 600;
+  }
 `;
