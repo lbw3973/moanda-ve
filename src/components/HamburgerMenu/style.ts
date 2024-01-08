@@ -14,7 +14,7 @@ export const ClickArea = styled.button`
   flex-direction: column;
   justify-content: space-between;
   width: 34px;
-  height: 28px;
+  height: 20px;
   border: none;
   background-color: transparent;
   cursor: pointer;
