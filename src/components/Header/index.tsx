@@ -30,9 +30,13 @@ const Header = () => {
         </Link>
         <S.Menus $isClicked={isClicked}>
           <div className="toHome">
-            <Link to={"/"} onClick={() => setIsClicked(false)}>
+            <NavLink
+              to={"/"}
+              onClick={() => setIsClicked(false)}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               HOME
-            </Link>
+            </NavLink>
           </div>
           {Object.entries(Menus).map(([key, value]) => (
             <div className={key} key={key}>
