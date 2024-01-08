@@ -13,7 +13,7 @@ export const Container = styled.div`
   @media ${({ theme }) => theme.windowSize.large} {
     max-width: 768px;
     min-width: 527px;
-    margin-left: 10%;
+    margin: 0 auto;
   }
 `;
 
