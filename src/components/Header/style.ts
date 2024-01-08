@@ -22,7 +22,7 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
   /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
-    width: calc(100% - 20px);
+    width: calc(100vw - 20px);
     justify-content: space-between;
   }
 `;
@@ -41,19 +41,6 @@ export const Wrapper = styled.div`
       width: 120px;
     }
 
-    div {
-      a {
-        color: #242424;
-        cursor: pointer;
-        padding: 4px;
-        transition-duration: 300ms;
-        @media (hover: hover) {
-          &:hover {
-            color: ${({ theme }) => theme.color.primary_normal};
-          }
-        }
-      }
-    }
     .toHome {
       display: none;
     }
@@ -85,6 +72,25 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     width: 100%;
     display: flex;
     justify-content: space-around;
+
+    div {
+      a {
+        display: inline-block;
+        color: #242424;
+        cursor: pointer;
+        padding: 4px;
+        transition-duration: 300ms;
+        @media (hover: hover) {
+          &:hover {
+            color: ${({ theme }) => theme.color.primary_normal};
+            transform: translateY(-5px);
+          }
+        }
+      }
+      .active {
+        color: ${({ theme }) => theme.color.primary_normal};
+      }
+    }
   }
 
   /* Tablet, Mobile */
@@ -93,10 +99,10 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 140px;
     height: 100%;
 
-    padding-top: 25%;
+    padding-top: 20%;
     background-color: ${({ theme }) => theme.color.primary_normal};
     opacity: ${({ $isClicked }) => ($isClicked ? "1" : "0")};
     transition: all 0.3s ease-in-out;
@@ -104,11 +110,22 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
     div {
       width: 100%;
       height: 56px;
+      line-height: 56px;
       text-align: center;
       transform: translateY(${({ $isClicked }) => ($isClicked ? "0%" : "-100%")});
       transition: transform 0.3s ease-in-out;
       a {
+        display: inline-block;
         color: ${({ theme }) => theme.color.primary_light};
+        width: 90%;
+        height: 80%;
+        line-height: 44.8px;
+        border-radius: 10px;
+      }
+      .active {
+        /* color: ${({ theme }) => theme.color.secondary_light}; */
+        color: #242424;
+        background-color: ${({ theme }) => theme.color.primary_light};
       }
     }
   }
