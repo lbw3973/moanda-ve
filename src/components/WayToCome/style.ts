@@ -52,13 +52,15 @@ export const InformContainer = styled.div`
       font-weight: 600;
       margin-bottom: 8px;
     }
-    span {
+    span,
+    a {
       font-size: 14px;
       line-height: 20px;
     }
   }
   .contact {
-    span {
+    span,
+    a {
       cursor: pointer;
       svg {
         margin-left: 6px;
@@ -73,5 +75,18 @@ export const InformContainer = styled.div`
 
   @media ${({ theme }) => theme.windowSize.large} {
     width: 50%;
+    .contact {
+      a {
+        display: none;
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    .contact {
+      span {
+        display: none;
+      }
+    }
   }
 `;

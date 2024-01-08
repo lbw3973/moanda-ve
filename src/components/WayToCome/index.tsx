@@ -2,8 +2,9 @@ import * as S from "./style";
 import LocationCard from "../LocationCard";
 import constant_base from "@/constants/base.json";
 import constant_intro from "@/constants/intro.json";
-import React, { MouseEvent } from "react";
+import { MouseEvent, Fragment } from "react";
 import { FaRegCopy } from "react-icons/fa";
+import { HiOutlinePhone } from "react-icons/hi2";
 
 const WayToCome = () => {
   const handleClipboardWrite = (e: MouseEvent<HTMLSpanElement>) => {
@@ -28,14 +29,18 @@ const WayToCome = () => {
             <h3>주차장 안내</h3>
             <span>
               {constant_intro.ParkingInfo.split("\n").map((span, index) => (
-                <React.Fragment key={index}>
+                <Fragment key={index}>
                   {span} <br />
-                </React.Fragment>
+                </Fragment>
               ))}
             </span>
           </div>
           <div className="contact">
             <h3>전화번호</h3>
+            <a href={`tel:${constant_base.Contact}`}>
+              {constant_base.Contact}
+              <HiOutlinePhone />
+            </a>
             <span onClick={handleClipboardWrite}>
               {constant_base.Contact}
               <FaRegCopy />
