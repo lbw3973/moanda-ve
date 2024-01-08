@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Menus = {
   intro: "카페 소개",
   menu: "메뉴 소개",
+  gift: "답례품",
   gallery: "갤러리",
-  notice: "공지사항",
 };
 
 const Header = () => {
