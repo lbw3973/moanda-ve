@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  /* background-color: ${({ theme }) => theme.color.primary_normal}; */
   color: ${({ theme }) => theme.color.secondary_light};
+  box-shadow: 0 4px 4px 2px ${({ theme }) => theme.color.primary_normal};
   padding: 0 20px 20px;
   text-align: center;
-  font-family: NanumSquareNeo;
+  font-family: "NanumSquareNeo";
 `;
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const Container = styled.div`
 
 export const CafeInfoContaier = styled.div`
   padding: 20px 0;
-  border-bottom: 0.5px solid rgba(123, 83, 57, 0.3);
+  border-bottom: 1px solid rgba(123, 83, 57, 0.3);
 
   @media ${({ theme }) => theme.windowSize.large} {
     display: flex;
