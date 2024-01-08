@@ -32,6 +32,7 @@ export const InformContainer = styled.div`
       margin-bottom: 8px;
     }
     span {
+      font-size: 14px;
       line-height: 20px;
     }
   }
