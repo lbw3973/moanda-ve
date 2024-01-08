@@ -38,7 +38,7 @@ const Footer = () => {
             <span>{constant.BusinessNumber}</span>
           </div>
         </S.OwnerInfoContaier>
-        <p>© Copyright {currentYear} Moanda've All Rights Reserved.</p>
+        <p className="copyright">© Copyright {currentYear} Moanda've All Rights Reserved.</p>
       </S.Container>
     </S.Footer>
   );
