@@ -7,13 +7,16 @@ import MenuItems from "../../util/MenuData.json";
 type ItemType = {
   src: string;
   name: string;
+  sugar: string;
   title: string;
-  des: string;
+  des: string[];
+  warning: string;
+  ingredient: string;
 };
 
 const MenuDetail = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<ItemType | null>(null);
+  const [selectedItem, setSelectedItem] = useState<ItemType | undefined>();
 
   const handleOpenModal = (item: ItemType) => {
     setSelectedItem(item);

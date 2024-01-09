@@ -16,33 +16,46 @@ export const MenuModalSection = styled.section<IMenuModalContainerProps>`
   transform: translateY(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 `;
 export const MenuModalContainer = styled.div<IMenuModalContainerProps>`
   min-width: 320px;
   min-height: 500px;
   position: relative;
-  bottom: 0; // 화면 하단과 맞춤
+  bottom: 0;
   width: 30%;
-  height: 70%; // 모달창의 높이를 조절하실 수 있습니다.
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
   padding: 0 20px;
   box-sizing: border-box;
   overflow: auto;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.primary_light};
-
+  transition: all 0.3s ease-out;
   transform: translateY(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
+
+  h3 {
+    @media ${({ theme }) => theme.windowSize.small} {
+      font-size: small;
+    }
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+  }
 `;
 
 export const MenuModalImage = styled.img`
   width: 300px;
   height: 400px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   border-radius: 20px;
+  @media ${({ theme }) => theme.windowSize.small} {
+    width: 150px;
+    height: 200px;
+  }
 `;
 
 export const MenuModalHeader = styled.div`
@@ -52,7 +65,7 @@ export const MenuModalHeader = styled.div`
   justify-content: center;
   position: relative;
   align-items: center;
-  margin-bottom: 5px;
+  margin: 10px 0;
 `;
 
 export const MenuModalExit = styled.div`
@@ -67,6 +80,12 @@ export const MenuModalExit = styled.div`
   cursor: pointer;
   position: absolute;
   right: 0;
+`;
+
+export const MenuModalImageDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const AreaElement = styled.span<{
@@ -85,12 +104,80 @@ export const AreaElement = styled.span<{
 `;
 
 export const MenuModalTitle = styled.h1`
-  background-color: ${({ theme }) => theme.color.primary_normal};
-  border: 1px solid #ddd;
-  color: #eee;
   font-size: 20px;
-
   text-align: center;
-  padding: 10px 40px;
   border-radius: 10px;
+  font-weight: bold;
+  position: relative;
+`;
+
+export const MenuModalTitleDesign = styled.span`
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #bedd9c;
+  border-radius: 100px;
+  rotate: -10deg;
+  translate: 4px;
+  z-index: 1;
+`;
+
+export const MenuModalTitleName = styled.span`
+  z-index: 100;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    font-size: 12px;
+    color: gray;
+    bottom: -15px;
+    right: 0;
+  }
+`;
+
+export const MenuModalDesTitle = styled.div`
+  width: 130px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+export const MenuModalDes = styled.h3``;
+
+export const MenuModalWarning = styled.h3`
+  @media ${({ theme }) => theme.windowSize.small} {
+    margin: 5px 0 0 0;
+  }
+  margin: 30px 0px;
+  color: red;
+`;
+
+export const MenuModalIngredient = styled.h3`
+  color: gray;
+`;
+
+export const MenuModalNaver = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 2px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  h1 {
+    margin-top: 9px;
+    margin-left: 10px;
+    font-size: small;
+  }
 `;
