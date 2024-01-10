@@ -14,7 +14,7 @@ const Swiper = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         className="relative h-full"
