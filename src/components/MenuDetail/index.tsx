@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as S from "./style";
 import MenuModal from "../MenuModal";
 
-import MenuItems from "../../util/MenuData.json";
+import MenuItems from "@/constants/MenuData.json";
 
 type ItemType = {
   src: string;
@@ -21,6 +21,7 @@ const MenuDetail = () => {
   const handleOpenModal = (item: ItemType) => {
     setSelectedItem(item);
     setIsOpen(!isOpen);
+    document.body.style.overflow = "hidden";
   };
 
   return (
@@ -41,7 +42,14 @@ const MenuDetail = () => {
         </div>
       ))}
 
-      <MenuModal openState={isOpen} onClose={() => setIsOpen(false)} item={selectedItem} />
+      <MenuModal
+        openState={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+          document.body.style.overflow = "auto";
+        }}
+        item={selectedItem}
+      />
     </>
   );
 };

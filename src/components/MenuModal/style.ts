@@ -8,27 +8,32 @@ export const MenuModalSection = styled.section<IMenuModalContainerProps>`
   width: 100%;
   height: 100%;
   position: fixed;
+  left: 0;
+  top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 0;
-  top: 0;
   transform: translateY(${({ $isOpen }) => ($isOpen ? "0" : "100%")});
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-out;
 `;
 export const MenuModalContainer = styled.div<IMenuModalContainerProps>`
-  min-width: 320px;
-  min-height: 500px;
+  @media ${({ theme }) => theme.windowSize.small} {
+    min-width: 320px;
+    min-height: 500px;
+    max-height: 85%;
+  }
+
+  min-width: 450px;
+  min-height: 750px;
+  max-height: 85%;
   position: relative;
-  bottom: 0;
   width: 30%;
-  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
+  padding: 5px 5px;
   box-sizing: border-box;
   overflow: auto;
   border-radius: 10px;
@@ -38,7 +43,7 @@ export const MenuModalContainer = styled.div<IMenuModalContainerProps>`
 
   h3 {
     @media ${({ theme }) => theme.windowSize.small} {
-      font-size: small;
+      font-size: 12px;
     }
     width: 100%;
     text-align: center;
@@ -60,7 +65,7 @@ export const MenuModalImage = styled.img`
 
 export const MenuModalHeader = styled.div`
   width: 100%;
-  height: 10%;
+  height: 40px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -86,21 +91,6 @@ export const MenuModalImageDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const AreaElement = styled.span<{
-  rotate: number;
-  translate: number;
-}>`
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  ${props => css`
-    rotate: ${props.rotate}deg;
-
-    transform: translateY(${props.translate}px) translateX(-25%);
-    background-color: black;
-  `}
 `;
 
 export const MenuModalTitle = styled.h1`
@@ -154,7 +144,7 @@ export const MenuModalWarning = styled.h3`
     margin: 5px 0 0 0;
   }
   margin: 30px 0px;
-  color: red;
+  color: #ff6666;
 `;
 
 export const MenuModalIngredient = styled.h3`
@@ -165,19 +155,37 @@ export const MenuModalNaver = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
+  background-color: #fff;
+  cursor: pointer;
+
   justify-content: center;
-  margin-top: 15px;
-  padding: 2px 0;
+  margin: 15px 0;
+  padding: 6px 0;
   border: 1px solid #ccc;
   border-radius: 10px;
   img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
   }
   h1 {
-    margin-top: 9px;
+    margin-top: 5px;
     margin-left: 10px;
     font-size: small;
   }
+`;
+
+export const AreaElement = styled.span<{
+  rotate: number;
+  translate: number;
+}>`
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  ${props => css`
+    rotate: ${props.rotate}deg;
+
+    transform: translateY(${props.translate}px) translateX(-25%);
+    background-color: black;
+  `}
 `;
