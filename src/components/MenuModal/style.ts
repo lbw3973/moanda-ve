@@ -80,6 +80,7 @@ export const MenuModalExit = styled.div`
   width: 22px;
   height: 20px;
   padding: 0;
+  margin-right: 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -159,6 +160,7 @@ export const MenuModalNaver = styled.div`
   cursor: pointer;
 
   justify-content: center;
+  align-items: center;
   margin: 15px 0;
   padding: 6px 0;
   border: 1px solid #ccc;
