@@ -5,17 +5,17 @@ import constant_intro from "@/constants/intro.json";
 import { MouseEvent, Fragment } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import { HiOutlinePhone } from "react-icons/hi2";
+import IntroHeader from "../Common/IntroHeader";
 
 const WayToCome = () => {
-  const handleClipboardWrite = (e: MouseEvent<HTMLSpanElement>) => {
+  const handleClickNumber = (e: MouseEvent<HTMLSpanElement>) => {
+    // 텍스트 복사
     const text = e.currentTarget.textContent ?? "";
     navigator.clipboard.writeText(text);
   };
   return (
     <>
-      <S.LocationHeader>
-        <h2>찾아오시는 길</h2>
-      </S.LocationHeader>
+      <IntroHeader headerText="찾아오시는 길" />
       <S.LocationContainer>
         <LocationCard />
         <S.InformContainer>
@@ -41,7 +41,7 @@ const WayToCome = () => {
               {constant_base.Contact}
               <HiOutlinePhone />
             </a>
-            <span onClick={handleClipboardWrite}>
+            <span onClick={handleClickNumber}>
               {constant_base.Contact}
               <FaRegCopy />
             </span>
