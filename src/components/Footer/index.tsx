@@ -37,6 +37,11 @@ const Footer = () => {
             <span>사업자등록번호 :&nbsp;</span>
             <span>{constant.BusinessNumber}</span>
           </div>
+          <div className="developer">
+            <span>사이트 관리자 :&nbsp;</span>
+            <span>lbw3973@gmail.com</span>
+            <span>sylee8048@gmail.com</span>
+          </div>
         </S.OwnerInfoContaier>
         <p className="copyright">© Copyright {currentYear} Moanda've All Rights Reserved.</p>
       </S.Container>
