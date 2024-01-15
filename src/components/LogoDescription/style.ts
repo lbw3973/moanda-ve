@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const cloud = keyframes`
+  0%,100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-8%);
+  }
+`;
 
 export const DescriptionContaier = styled.div`
   text-align: center;
@@ -11,6 +20,7 @@ export const DescriptionContaier = styled.div`
 export const LogoImage = styled.img`
   width: 300px;
   padding-bottom: 30px;
+  animation: ${cloud} 3s ease-in-out infinite;
 
   @media ${({ theme }) => theme.windowSize.medium} {
     width: 250px;
