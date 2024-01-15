@@ -28,7 +28,7 @@ const WayToCome = () => {
           <div className="parking">
             <h3>주차장 안내</h3>
             <span>
-              {constant_intro.ParkingInfo.split("\n").map((span, index) => (
+              {constant_intro.WayToCome.ParkingInfo.split("\n").map((span, index) => (
                 <Fragment key={index}>
                   {span} <br />
                 </Fragment>
