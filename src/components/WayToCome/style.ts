@@ -5,7 +5,7 @@ export const LocationContainer = styled.div`
   color: #242424;
 
   @media ${({ theme }) => theme.windowSize.large} {
-    height: 280px;
+    height: 100%;
     display: flex;
     gap: 20px;
   }

@@ -10,6 +10,7 @@ export const Footer = styled.footer`
 
 export const Container = styled.div`
   font-size: 14px;
+
   @media ${({ theme }) => theme.windowSize.large} {
     max-width: 768px;
     min-width: 527px;
@@ -17,6 +18,10 @@ export const Container = styled.div`
     .copyright {
       text-align: start;
     }
+  }
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    font-size: 12px;
   }
 `;
 
