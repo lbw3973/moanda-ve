@@ -5,7 +5,7 @@ export const LocationContainer = styled.div`
   color: #242424;
 
   @media ${({ theme }) => theme.windowSize.large} {
-    height: 280px;
+    height: 100%;
     display: flex;
     gap: 20px;
   }
@@ -49,6 +49,7 @@ export const InformContainer = styled.div`
   .clickNotice {
     color: ${({ theme }) => theme.color.primary_normal};
     font-weight: 600;
+    font-size: 12px;
   }
 
   @media ${({ theme }) => theme.windowSize.large} {

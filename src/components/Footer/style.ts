@@ -10,6 +10,7 @@ export const Footer = styled.footer`
 
 export const Container = styled.div`
   font-size: 14px;
+
   @media ${({ theme }) => theme.windowSize.large} {
     max-width: 768px;
     min-width: 527px;
@@ -17,6 +18,10 @@ export const Container = styled.div`
     .copyright {
       text-align: start;
     }
+  }
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    font-size: 12px;
   }
 `;
 
@@ -103,7 +108,8 @@ export const OwnerInfoContaier = styled.div`
     div {
       display: flex;
     }
-    .ownerInfo::after {
+    .ownerInfo::after,
+    .businessInfo::after {
       content: "";
       display: block;
       width: 1px;
@@ -111,10 +117,21 @@ export const OwnerInfoContaier = styled.div`
       background-color: ${({ theme }) => theme.color.secondary_light};
       margin: 0 8px;
     }
+    .developer {
+      gap: 5px;
+    }
   }
+
   @media ${({ theme }) => theme.windowSize.medium} {
+    font-size: 12px;
     .ownerInfo {
       margin-bottom: 5px;
+    }
+    .developer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+      gap: 5px;
     }
   }
 `;
