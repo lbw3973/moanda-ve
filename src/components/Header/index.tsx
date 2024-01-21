@@ -49,6 +49,7 @@ const Header = () => {
               </NavLink>
             </div>
           ))}
+          <div className="mobile_wrapper" onClick={() => setIsClicked(false)}></div>
         </S.Menus>
       </S.Wrapper>
       <S.WindowSizeMobile></S.WindowSizeMobile>
