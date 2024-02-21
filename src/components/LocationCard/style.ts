@@ -11,6 +11,6 @@ export const LocationCardContainer = styled.div`
     width: 50%;
   }
   @media ${({ theme }) => theme.windowSize.medium} {
-    width: 90%;
+    width: 100%;
   }
 `;

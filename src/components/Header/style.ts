@@ -91,10 +91,26 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
         color: ${({ theme }) => theme.color.primary_normal};
       }
     }
+    .mobile_wrapper {
+      display: none;
+    }
   }
 
   /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
+    .mobile_wrapper {
+      display: ${({ $isClicked }) => ($isClicked ? "block" : "none")};
+      position: fixed;
+      top: 0;
+      left: 140px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0);
+      opacity: 0.2;
+      transform: none;
+      transition: none;
+    }
+
     visibility: ${({ $isClicked }) => ($isClicked ? "inherit" : "hidden")};
     position: fixed;
     top: 0;
@@ -121,6 +137,7 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
         height: 80%;
         line-height: 44.8px;
         border-radius: 10px;
+        z-index: 100;
       }
       .active {
         /* color: ${({ theme }) => theme.color.secondary_light}; */

@@ -2,7 +2,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import * as S from "./style";
 import { Autoplay, Pagination } from "swiper/modules";
-import { mainImageList_Mobile } from "../../util/importImage";
+import { mainImageList_Mobile } from "../../constants/importImage";
 
 const Swiper = () => {
   return (
