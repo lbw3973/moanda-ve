@@ -28,6 +28,12 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
     setOpen(openState);
   }, [openState]);
 
+  useEffect(() => {
+    return () => {
+      onClose();
+    };
+  }, []);
+
   return (
     <S.MenuModalSection $isOpen={isOpen}>
       <S.MenuModalContainer $isOpen={isOpen}>
@@ -51,23 +57,22 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
           <S.MenuModalImage src={item?.src} alt={item?.name} />
         </S.MenuModalImageDiv>
         <S.MenuModalDesTitle>
-          {/* {item?.title.split(" + ").map((ingredient, index, arr) => (
-            <span key={index}>
-              {ingredient}
-              {index !== arr.length - 1 && (
-                <>
-                  <br />+<br />
-                </>
-              )}
-            </span>
-          ))} */}
-          <span>{item?.price}</span>
-          <span>{item?.ingredient}</span>
+          <div>
+            <h1>주성분</h1>
+            <div>
+              {item?.ingredient.includes("\n")
+                ? item?.ingredient.split("\n").map(data => (
+                    <span>
+                      {data}
+                      <br />
+                    </span>
+                  ))
+                : item?.ingredient}
+            </div>
+          </div>
         </S.MenuModalDesTitle>
-        {/* {item?.des.map((text, index) => <S.MenuModalDes key={index}>{text}</S.MenuModalDes>)} */}
-        <span>{item?.how}</span>
+        <span className="how">{item?.how}</span>
         <S.MenuModalWarning>*{item?.warning}</S.MenuModalWarning>
-        {/* <S.MenuModalIngredient>*주성분: {item?.ingredient}</S.MenuModalIngredient> */}
         <S.MenuModalNaver onClick={() => window.open(constant.NaverStoreProduct)}>
           <img src="/Logo/naver.jpg" alt="" />
           <div>

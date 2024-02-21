@@ -49,13 +49,20 @@ export const MenuModalContainer = styled.div<IMenuModalContainerProps>`
     text-align: center;
     line-height: 20px;
   }
+  span {
+    font-weight: bold;
+  }
+  .how {
+    background-color: #fdf89a99;
+    border-radius: 100%;
+    padding: 5px 20px;
+  }
 `;
 
 export const MenuModalImage = styled.img`
   width: 300px;
   height: 400px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+
   border-radius: 20px;
   @media ${({ theme }) => theme.windowSize.small} {
     width: 150px;
@@ -70,7 +77,7 @@ export const MenuModalHeader = styled.div`
   justify-content: center;
   position: relative;
   align-items: center;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
 `;
 
 export const MenuModalExit = styled.div`
@@ -92,6 +99,7 @@ export const MenuModalImageDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 `;
 
 export const MenuModalTitle = styled.h1`
@@ -130,13 +138,28 @@ export const MenuModalTitleName = styled.span`
 
 export const MenuModalDesTitle = styled.div`
   width: 90%;
-  height: 100px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: center;
-  font-weight: bold;
+  word-break: keep-all;
+  margin-bottom: 10px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    h1 {
+      font-weight: bold;
+    }
+    div {
+      text-align: center;
+      font-weight: bold;
+      color: #777;
+    }
+  }
   span {
+    display: block;
     word-break: keep-all;
   }
 `;
