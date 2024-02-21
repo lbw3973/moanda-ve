@@ -34,8 +34,8 @@ const MenuDetail = () => {
   useEffect(() => {
     const handleScroll = () => {
       refs.forEach(ref => {
-        const offset = ref.current?.getBoundingClientRect().y as number;
-        if (window.scrollY + window.innerHeight >= offset + 200) {
+        const offset = ref.current?.offsetTop as number;
+        if (window.scrollY + window.innerHeight >= offset) {
           ref.current?.classList.add("visible");
         }
       });
@@ -52,8 +52,8 @@ const MenuDetail = () => {
   return (
     <>
       {Object.entries(MenuItems).map(([title, items], index) => (
-        <S.MenuDetailContainer>
-          <S.MenuDetailDiv key={index} ref={refs[index]}>
+        <S.MenuDetailContainer key={index}>
+          <S.MenuDetailDiv ref={refs[index]}>
             <S.MenuItemTitle key={index}>{title}</S.MenuItemTitle>
             <S.StoreDetail>
               {items.map((item, idx) => (
