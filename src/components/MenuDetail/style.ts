@@ -1,8 +1,46 @@
 import styled from "styled-components";
-
+import { keyframes } from "styled-components";
 interface IModalProps {
   isOpen: boolean;
 }
+
+const fadeInMove = keyframes`
+0% {
+  opacity: 0;
+
+}
+100% {
+  opacity: 1;
+
+}
+`;
+
+const fadeInMoveMobile = keyframes`
+0% {
+  opacity: 0;
+
+}
+100% {
+  opacity: 1;
+
+}
+`;
+
+export const MenuDetailContainer = styled.div`
+  visibility: hidden;
+  .visible {
+    visibility: visible !important;
+    opacity: 0;
+    @media ${({ theme }) => theme.windowSize.large} {
+      animation: ${fadeInMove} 1.5s forwards ease-in-out;
+    }
+    @media ${({ theme }) => theme.windowSize.medium} {
+      animation: ${fadeInMoveMobile} 1.5s forwards ease-in-out;
+    }
+  }
+`;
+
+export const MenuDetailDiv = styled.div``;
 
 export const StoreDetail = styled.div`
   display: grid;
@@ -35,6 +73,11 @@ export const MenuItem = styled.div`
   align-items: center;
   gap: 10px;
   cursor: pointer;
+
+  h2 {
+    width: 120px;
+    text-align: center;
+  }
 
   transition: all 0.1s ease-in-out;
   &:hover {
