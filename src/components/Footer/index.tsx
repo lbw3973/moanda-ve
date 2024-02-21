@@ -1,7 +1,7 @@
 import * as S from "./style";
 import constant from "@/constants/base.json";
 import Logo from "/Logo/Logo.jpg";
-import { footerImageList } from "@/util/importImage";
+import { footerImageList } from "@/constants/importImage";
 
 const link = [constant.NaverStore, constant.Instagram, constant.KakaoChannel];
 

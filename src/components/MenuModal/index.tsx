@@ -9,11 +9,10 @@ const AreaElements = [
 type ItemType = {
   src: string;
   name: string;
-  sugar: string;
-  title: string;
-  des: string[];
-  warning: string;
+  price: string;
   ingredient: string;
+  how: string;
+  warning: string;
 };
 
 interface IMenuModalProps {
@@ -35,10 +34,7 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
         <S.MenuModalHeader>
           <S.MenuModalTitle>
             <S.MenuModalTitleDesign></S.MenuModalTitleDesign>
-            <S.MenuModalTitleName>
-              {item?.name}
-              <h2>당도_{item?.sugar}</h2>
-            </S.MenuModalTitleName>
+            <S.MenuModalTitleName>{item?.name}</S.MenuModalTitleName>
           </S.MenuModalTitle>
 
           <S.MenuModalExit onClick={onClose}>
@@ -53,23 +49,26 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
         </S.MenuModalHeader>
         <S.MenuModalImageDiv>
           <S.MenuModalImage src={item?.src} alt={item?.name} />
-          <S.MenuModalDesTitle>
-            {item?.title.split(" + ").map((ingredient, index, arr) => (
-              <span key={index}>
-                {ingredient}
-                {index !== arr.length - 1 && (
-                  <>
-                    <br />+<br />
-                  </>
-                )}
-              </span>
-            ))}
-          </S.MenuModalDesTitle>
         </S.MenuModalImageDiv>
-        {item?.des.map((text, index) => <S.MenuModalDes key={index}>{text}</S.MenuModalDes>)}
+        <S.MenuModalDesTitle>
+          {/* {item?.title.split(" + ").map((ingredient, index, arr) => (
+            <span key={index}>
+              {ingredient}
+              {index !== arr.length - 1 && (
+                <>
+                  <br />+<br />
+                </>
+              )}
+            </span>
+          ))} */}
+          <span>{item?.price}</span>
+          <span>{item?.ingredient}</span>
+        </S.MenuModalDesTitle>
+        {/* {item?.des.map((text, index) => <S.MenuModalDes key={index}>{text}</S.MenuModalDes>)} */}
+        <span>{item?.how}</span>
         <S.MenuModalWarning>*{item?.warning}</S.MenuModalWarning>
-        <S.MenuModalIngredient>*주성분: {item?.ingredient}</S.MenuModalIngredient>
-        <S.MenuModalNaver onClick={() => window.open(constant.NaverStore)}>
+        {/* <S.MenuModalIngredient>*주성분: {item?.ingredient}</S.MenuModalIngredient> */}
+        <S.MenuModalNaver onClick={() => window.open(constant.NaverStoreProduct)}>
           <img src="/Logo/naver.jpg" alt="" />
           <div>
             <h1>모앤더비</h1>

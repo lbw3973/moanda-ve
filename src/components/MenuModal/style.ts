@@ -129,14 +129,16 @@ export const MenuModalTitleName = styled.span`
 `;
 
 export const MenuModalDesTitle = styled.div`
-  width: 130px;
-  height: 200px;
+  width: 90%;
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   font-weight: bold;
-  margin-bottom: 20px;
+  span {
+    word-break: keep-all;
+  }
 `;
 export const MenuModalDes = styled.h3``;
 
