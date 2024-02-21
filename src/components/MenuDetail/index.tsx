@@ -7,11 +7,10 @@ import MenuItems from "@/constants/MenuData.json";
 type ItemType = {
   src: string;
   name: string;
-  sugar: string;
-  title: string;
-  des: string[];
-  warning: string;
+  price: string;
   ingredient: string;
+  how: string;
+  warning: string;
 };
 
 const MenuDetail = () => {
