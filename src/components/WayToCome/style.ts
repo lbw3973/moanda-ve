@@ -3,17 +3,21 @@ import styled from "styled-components";
 export const LocationContainer = styled.div`
   font-family: "NanumSquareNeo";
   color: #242424;
+  margin: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   @media ${({ theme }) => theme.windowSize.large} {
     height: 100%;
     display: flex;
     gap: 20px;
+    padding-bottom: 30px;
   }
   @media ${({ theme }) => theme.windowSize.medium} {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    padding-bottom: 15px;
   }
 `;
 
