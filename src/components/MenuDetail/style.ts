@@ -29,7 +29,7 @@ const fadeInMoveMobile = keyframes`
 export const MenuDetailContainer = styled.div`
   visibility: hidden;
   .visible {
-    visibility: visible !important;
+    visibility: visible;
     opacity: 0;
     @media ${({ theme }) => theme.windowSize.large} {
       animation: ${fadeInMove} 1.5s forwards ease-in-out;
