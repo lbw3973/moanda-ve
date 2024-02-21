@@ -39,6 +39,9 @@ export const InformContainer = styled.div`
       font-size: 14px;
       line-height: 20px;
     }
+    img {
+      width: 200px;
+    }
   }
   .contact {
     span,

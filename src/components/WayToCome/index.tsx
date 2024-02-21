@@ -46,6 +46,12 @@ const WayToCome = () => {
               <FaRegCopy />
             </span>
           </div>
+          <div>
+            <h3>배달의 민족</h3>
+            <img src="/Logo/baemin_des.png" onClick={() => window.open(constant_base.baemin)} />
+            <br />
+            <span className="clickNotice">배달의 민족에서도 주문하실 수 있습니다.</span>
+          </div>
         </S.InformContainer>
       </S.LocationContainer>
     </>
