@@ -3,7 +3,7 @@ import constant from "@/constants/base.json";
 import Logo from "/Logo/Logo.jpg";
 import { footerImageList } from "@/constants/importImage";
 
-const link = [constant.NaverStore, constant.Instagram, constant.KakaoChannel];
+const link = [constant.NaverStore, constant.Instagram, constant.KakaoChannel, constant.baemin];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
