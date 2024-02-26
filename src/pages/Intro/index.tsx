@@ -1,7 +1,7 @@
 import * as S from "./style";
-import WayToCome from "@/components/WayToCome";
-import LogoDescription from "@/components/LogoDescription";
-import VeganDescription from "@/components/VeganDescription";
+import WayToCome from "@/components/Main/Common/WayToCome";
+import LogoDescription from "@/components/Main/Common/LogoDescription";
+import VeganDescription from "@/components/Main/Common/VeganDescription";
 import { useEffect, useRef } from "react";
 
 const sections = [<LogoDescription />, <VeganDescription />, <WayToCome />];
