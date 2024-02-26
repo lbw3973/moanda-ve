@@ -6,7 +6,7 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background-color: ${({ theme }) => theme.color.primary_light};
   box-shadow: 0px 4px 13px -5px rgba(50, 50, 93, 0.25);
 
