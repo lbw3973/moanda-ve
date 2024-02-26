@@ -14,8 +14,10 @@ import Naver from "/Logo/naver.jpg";
 import Instagram from "/Logo/instagram.png";
 import kakao from "/Logo/kakao.png";
 import baemin from "/Logo/baemin.png";
+import test1 from "/test.jpg";
+import test2 from "/test2.jpg";
 
-export const mainImageList_Mobile = [
+const mainImageList_Mobile = [
   image1,
   image2,
   image3,
@@ -30,4 +32,8 @@ export const mainImageList_Mobile = [
   image12,
 ];
 
-export const footerImageList = [Naver, Instagram, kakao, baemin];
+const mainImageList_DeskTop = [test1, test2];
+
+const footerImageList = [Naver, Instagram, kakao, baemin];
+
+export { mainImageList_Mobile, mainImageList_DeskTop, footerImageList };

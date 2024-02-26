@@ -10,12 +10,15 @@ export const FPSContainer = styled.div`
     top: 0;
     height: calc(100vh - 80px);
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 
     img {
-      width: 100%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      max-width: inherit;
       height: 100%;
     }
   }
