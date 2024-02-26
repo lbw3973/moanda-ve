@@ -1,41 +1,27 @@
 import { FullPageScroll } from "@/components/Common/FullPageScroll";
 import Footer from "@/components/Footer";
 import Swiper from "@/components/Swiper";
-import { useEffect, useState } from "react";
+import { useScreenSizeStore } from "@/stores/screenSizeStore";
+import { mainImageList_DeskTop, mainImageList_Mobile } from "../../constants/importImage";
 
 const Home = () => {
-  const [useFPS, setUseFPS] = useState(false);
-
-  useEffect(() => {
-    const resizing = () => {
-      setUseFPS(window.innerWidth > 768);
-    };
-    resizing();
-
-    window.addEventListener("resize", resizing);
-
-    return () => {
-      window.removeEventListener("resize", resizing);
-    };
-  }, []);
+  const { isMobileView } = useScreenSizeStore();
 
   return (
     <section>
-      {useFPS ? (
+      {isMobileView ? (
+        <Swiper imageList={mainImageList_Mobile} />
+      ) : (
         <FullPageScroll>
+          <Swiper imageList={mainImageList_DeskTop} />
           <div className="fps_child">
-            <img src="/Mobile/Main/img_1.jpg" />
-          </div>
-          <div className="fps_child">
-            <img src="/Mobile/Main/img_2.jpg" />
+            <img src="/test2.jpg" />
           </div>
           <div className="fps_child">
             <img src="/Mobile/Main/img_3.jpg" />
           </div>
           <Footer />
         </FullPageScroll>
-      ) : (
-        <Swiper />
       )}
     </section>
   );
