@@ -14,8 +14,8 @@ import Naver from "/Logo/naver.jpg";
 import Instagram from "/Logo/instagram.png";
 import kakao from "/Logo/kakao.png";
 import baemin from "/Logo/baemin.png";
-import test1 from "/test.jpg";
-import test2 from "/test2.jpg";
+import test1 from "/test.jfif";
+import test2 from "/test2.jfif";
 
 const mainImageList_Mobile = [
   image1,

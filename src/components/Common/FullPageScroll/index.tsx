@@ -1,20 +1,16 @@
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as S from "./style";
+const homeElements = ["/Icon/main512.png", "/Icon/newProduct.png", "/Icon/gift.png", "/Logo/instagram.png"];
 
-type PFullPageScroll = {
-  onPageChange?: (page: number) => void;
-  onLoad?: (limit: number) => void;
-} & PropsWithChildren;
-
-export const FullPageScroll: React.FC<PFullPageScroll> = ({ children, onLoad = () => {}, onPageChange = () => {} }) => {
+export const FullPageScroll = ({ children }: { children: React.ReactNode }) => {
   const outerDivRef = useRef<HTMLDivElement>(null);
   const currentPage = useRef<number>(0);
   const canScroll = useRef<boolean>(true);
   const oldTouchY = useRef<number>(0);
+  const [_currentPage, _setCurrentPage] = useState(0);
 
   const scrollDown = () => {
     const pageHeight = outerDivRef.current?.children.item(0)?.clientHeight;
-
     if (outerDivRef.current && pageHeight) {
       outerDivRef.current.scrollTo({
         top: pageHeight * (currentPage.current + 1),
@@ -25,10 +21,13 @@ export const FullPageScroll: React.FC<PFullPageScroll> = ({ children, onLoad = (
       setTimeout(() => {
         canScroll.current = true;
       }, 500);
-      if (outerDivRef.current.childElementCount - 1 > currentPage.current) currentPage.current++;
+      if (outerDivRef.current.childElementCount - 1 > currentPage.current) {
+        currentPage.current++;
+        if (currentPage.current !== homeElements.length) {
+          _setCurrentPage(currentPage.current);
+        }
+      }
     }
-
-    onPageChange(currentPage.current);
   };
 
   const scrollUp = () => {
@@ -44,10 +43,11 @@ export const FullPageScroll: React.FC<PFullPageScroll> = ({ children, onLoad = (
       setTimeout(() => {
         canScroll.current = true;
       }, 500);
-      if (currentPage.current > 0) currentPage.current--;
+      if (currentPage.current > 0) {
+        currentPage.current--;
+        _setCurrentPage(currentPage.current);
+      }
     }
-
-    onPageChange(currentPage.current);
   };
 
   const wheelHandler = (e: WheelEvent) => {
@@ -84,7 +84,6 @@ export const FullPageScroll: React.FC<PFullPageScroll> = ({ children, onLoad = (
   useEffect(() => {
     const outer = outerDivRef.current;
     if (!outer) return;
-    onLoad(outerDivRef.current.childElementCount);
 
     outer.addEventListener("wheel", wheelHandler);
     outer.addEventListener("scroll", scrollHandler);
@@ -101,5 +100,40 @@ export const FullPageScroll: React.FC<PFullPageScroll> = ({ children, onLoad = (
     };
   }, []);
 
-  return <S.FPSContainer ref={outerDivRef}>{children}</S.FPSContainer>;
+  const handleClick = (index: number) => {
+    const pageHeight = outerDivRef.current?.children.item(0)?.clientHeight;
+    if (outerDivRef.current && pageHeight) {
+      outerDivRef.current.scrollTo({
+        top: pageHeight * index,
+        left: 0,
+        behavior: "smooth",
+      });
+
+      if (outerDivRef.current.childElementCount - 1 > currentPage.current) {
+        currentPage.current = index;
+        if (currentPage.current !== homeElements.length) {
+          _setCurrentPage(currentPage.current);
+        }
+      }
+    }
+  };
+
+  return (
+    <>
+      <S.FPSContainer ref={outerDivRef}>{children}</S.FPSContainer>
+      <S.ProgressBarContainer>
+        <S.Wrapper>
+          {homeElements.map((el, index) => (
+            <S.Elements key={index} $isCurrent={index === _currentPage} onClick={() => handleClick(index)}>
+              <img src={el} />
+            </S.Elements>
+          ))}
+        </S.Wrapper>
+        <S.VerticalBar>
+          <S.FillVerticalBar $curFilled={_currentPage} $totalEls={homeElements.length}></S.FillVerticalBar>
+        </S.VerticalBar>
+      </S.ProgressBarContainer>
+      {/* <ProgressBar /> */}
+    </>
+  );
 };
