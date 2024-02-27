@@ -5,9 +5,16 @@ import { mainImageList_DeskTop_Gift } from "@/constants/importImage";
 const PreviewGift = () => {
   return (
     <S.Container>
-      <S.Wrapper>
+      <S.ContentWrapper>
+        <h1>
+          Moanda've
+          <br />
+          Gift Ideas
+        </h1>
+      </S.ContentWrapper>
+      <S.SwiperWrapper>
         <Swiper imageList={mainImageList_DeskTop_Gift} width="400px" height="100%" />
-      </S.Wrapper>
+      </S.SwiperWrapper>
     </S.Container>
   );
 };
