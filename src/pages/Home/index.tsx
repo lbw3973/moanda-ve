@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <section style={{ position: "relative" }}>
       {isMobileView ? (
-        <Swiper imageList={mainImageList_Mobile} />
+        <Swiper imageList={mainImageList_Mobile} width="100%" height="100%" />
       ) : (
         <FullPageScroll>
           <Intro />

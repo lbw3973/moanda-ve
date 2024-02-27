@@ -1,20 +1,14 @@
+import Swiper from "@/components/Swiper";
+import * as S from "./style";
+import { mainImageList_DeskTop_Gift } from "@/constants/importImage";
+
 const PreviewGift = () => {
   return (
-    <div className="fps_child">
-      <img src="/Mobile/Main/img_3.jpg" />
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          fontSize: "60px",
-          zIndex: "1000",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        이미지 준비중...
-      </div>
-    </div>
+    <S.Container>
+      <S.Wrapper>
+        <Swiper imageList={mainImageList_DeskTop_Gift} width="400px" height="100%" />
+      </S.Wrapper>
+    </S.Container>
   );
 };
 

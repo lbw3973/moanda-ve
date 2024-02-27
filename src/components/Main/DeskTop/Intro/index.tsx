@@ -4,7 +4,7 @@ import { mainImageList_DeskTop } from "@/constants/importImage";
 const Intro = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Swiper imageList={mainImageList_DeskTop} />
+      <Swiper imageList={mainImageList_DeskTop} width="100%" height="calc(100vh - 80px)" />
       <div
         style={{
           position: "absolute",

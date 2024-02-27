@@ -1,28 +1,26 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export const temp = styled.div``;
+export const swiper = styled(Swiper)<{ $width: string; $height: string }>`
+  width: ${({ $width }) => $width};
 
-export const swiper = styled(Swiper)`
-  width: 100%;
-
-  .swiper-slide {
-    img {
-      height: 100%;
-    }
-  }
   .swiper-pagination-bullet-active {
     background-color: ${({ theme }) => theme.color.primary_normal};
   }
   @media ${({ theme }) => theme.windowSize.large} {
-    height: calc(100vh - 80px);
+    height: ${({ $height }) => $height};
     overflow-y: hidden;
+
+    .swiper-slide {
+      img {
+        height: 100%;
+      }
+    }
 
     .swiper-slide-active {
       position: relative;
       top: 0;
-      height: calc(100vh - 80px);
-      width: 100%;
+      height: ${({ $height }) => $height};
 
       img {
         display: block;
