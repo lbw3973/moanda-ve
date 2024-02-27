@@ -49,8 +49,15 @@ const MenuDetail = () => {
     };
   }, []);
 
+  const clickClose = () => {
+    if (isOpen) {
+      setIsOpen(false);
+      document.body.style.overflow = "auto";
+    }
+  };
+
   return (
-    <>
+    <div onClick={clickClose}>
       {Object.entries(MenuItems).map(([title, items], index) => (
         <S.MenuDetailContainer key={index}>
           <S.MenuDetailDiv ref={refs[index]}>
@@ -77,7 +84,7 @@ const MenuDetail = () => {
         }}
         item={selectedItem}
       />
-    </>
+    </div>
   );
 };
 
