@@ -1,18 +1,16 @@
 import * as S from "./style";
-import WayToCome from "@/components/WayToCome";
-import LogoDescription from "@/components/LogoDescription";
-import VeganDescription from "@/components/VeganDescription";
+import WayToCome from "@/components/Main/Common/WayToCome";
+import LogoDescription from "@/components/Main/Common/LogoDescription";
+import VeganDescription from "@/components/Main/Common/VeganDescription";
 import { useEffect, useRef } from "react";
-import Baemin from "@/components/Baemin";
 
-const sections = [<LogoDescription />, <VeganDescription />, <WayToCome />, <Baemin />];
+const sections = [<LogoDescription />, <VeganDescription />, <WayToCome />];
 
 const Intro = () => {
   const LogoDesRef = useRef<HTMLDivElement>(null);
   const VeganDesRef = useRef<HTMLDivElement>(null);
   const WayToComeRef = useRef<HTMLDivElement>(null);
-  const BaeminRef = useRef<HTMLDivElement>(null);
-  const refs = [LogoDesRef, VeganDesRef, WayToComeRef, BaeminRef];
+  const refs = [LogoDesRef, VeganDesRef, WayToComeRef];
 
   useEffect(() => {
     const handleScroll = () => {

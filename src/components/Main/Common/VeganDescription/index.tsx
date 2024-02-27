@@ -1,7 +1,7 @@
-import IntroHeader from "../Common/IntroHeader";
 import constant_intro from "@/constants/intro.json";
 import * as S from "./style";
 import { Fragment } from "react";
+import IntroHeader from "../IntroHeader";
 
 const VeganDescription = () => {
   return (

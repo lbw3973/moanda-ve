@@ -1,4 +1,4 @@
-import IntroHeader from "../Common/IntroHeader";
+import IntroHeader from "../IntroHeader";
 import Logo from "/Logo/Logo.jpg";
 import * as S from "./style";
 

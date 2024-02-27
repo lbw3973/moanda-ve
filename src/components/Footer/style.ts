@@ -4,6 +4,7 @@ export const Footer = styled.footer`
   color: ${({ theme }) => theme.color.secondary_light};
   box-shadow: 0 -4px 4px -5px ${({ theme }) => theme.color.primary_normal};
   padding: 0 20px 20px;
+  margin-top: 20px;
   text-align: center;
   font-family: "NanumSquareNeo";
 `;

@@ -2,9 +2,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import * as S from "./style";
 import { Autoplay, Pagination } from "swiper/modules";
-import { mainImageList_Mobile } from "../../constants/importImage";
 
-const Swiper = () => {
+const Swiper = ({ imageList, width, height }: { imageList: string[]; width: string; height: string }) => {
   return (
     <>
       <S.swiper
@@ -13,13 +12,15 @@ const Swiper = () => {
         scrollbar={{ draggable: true }}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // }}
         className="relative h-full"
+        $width={width}
+        $height={height}
       >
-        {mainImageList_Mobile.map((img, index) => (
+        {imageList.map((img, index) => (
           <S.swiperSlide key={index}>
             <img src={img} />
           </S.swiperSlide>

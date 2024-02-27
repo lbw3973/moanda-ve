@@ -11,6 +11,13 @@ a {
   color: black;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
