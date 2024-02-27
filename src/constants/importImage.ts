@@ -16,6 +16,11 @@ import kakao from "/Logo/kakao.png";
 import baemin from "/Logo/baemin.png";
 import test1 from "/test.jfif";
 import test2 from "/test2.jfif";
+import 연노랑박스 from "/Main/Gift/연노랑박스.jpg";
+import 왕리본도시락박스 from "/Main/Gift/왕리본도시락박스.jpg";
+import 종이봉투 from "/Main/Gift/종이봉투.jpg";
+import 친환경사각박스 from "/Main/Gift/친환경사각박스.jpg";
+import 크라프트사각박스 from "/Main/Gift/크라프트사각박스.jpg";
 
 const mainImageList_Mobile = [
   image1,
@@ -33,7 +38,8 @@ const mainImageList_Mobile = [
 ];
 
 const mainImageList_DeskTop = [test1, test2];
+const mainImageList_DeskTop_Gift = [연노랑박스, 왕리본도시락박스, 종이봉투, 친환경사각박스, 크라프트사각박스];
 
 const footerImageList = [Naver, Instagram, kakao, baemin];
 
-export { mainImageList_Mobile, mainImageList_DeskTop, footerImageList };
+export { mainImageList_Mobile, mainImageList_DeskTop, footerImageList, mainImageList_DeskTop_Gift };
