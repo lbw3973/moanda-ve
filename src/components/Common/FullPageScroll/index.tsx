@@ -7,6 +7,7 @@ export const FullPageScroll = ({ children }: { children: React.ReactNode }) => {
   const currentPage = useRef<number>(0);
   const canScroll = useRef<boolean>(true);
   const oldTouchY = useRef<number>(0);
+  const verticalBarRef = useRef<HTMLDivElement>(null);
   const [_currentPage, _setCurrentPage] = useState(0);
 
   const scrollDown = () => {
@@ -83,13 +84,19 @@ export const FullPageScroll = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const outer = outerDivRef.current;
-    if (!outer) return;
+    const verticalBar = verticalBarRef.current;
+    if (!outer || !verticalBar) return;
 
     outer.addEventListener("wheel", wheelHandler);
     outer.addEventListener("scroll", scrollHandler);
     outer.addEventListener("touchmove", scrollHandler);
     outer.addEventListener("touchstart", onTouchDown);
     outer.addEventListener("touchend", onTouchUp);
+    verticalBar.addEventListener("wheel", wheelHandler);
+    verticalBar.addEventListener("scroll", scrollHandler);
+    verticalBar.addEventListener("touchmove", scrollHandler);
+    verticalBar.addEventListener("touchstart", onTouchDown);
+    verticalBar.addEventListener("touchend", onTouchUp);
 
     return () => {
       outer.removeEventListener("wheel", wheelHandler);
@@ -97,6 +104,11 @@ export const FullPageScroll = ({ children }: { children: React.ReactNode }) => {
       outer.removeEventListener("touchmove", scrollHandler);
       outer.removeEventListener("touchstart", onTouchDown);
       outer.removeEventListener("touchend", onTouchUp);
+      verticalBar.removeEventListener("wheel", wheelHandler);
+      verticalBar.removeEventListener("scroll", scrollHandler);
+      verticalBar.removeEventListener("touchmove", scrollHandler);
+      verticalBar.removeEventListener("touchstart", onTouchDown);
+      verticalBar.removeEventListener("touchend", onTouchUp);
     };
   }, []);
 
@@ -121,19 +133,18 @@ export const FullPageScroll = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <S.FPSContainer ref={outerDivRef}>{children}</S.FPSContainer>
-      <S.ProgressBarContainer>
+      <S.ProgressBarContainer ref={verticalBarRef}>
         <S.Wrapper>
           {homeElements.map((el, index) => (
             <S.Elements key={index} $isCurrent={index === _currentPage} onClick={() => handleClick(index)}>
               <img src={el} />
             </S.Elements>
           ))}
+          <S.VerticalBar>
+            <S.FillVerticalBar $curFilled={_currentPage} $totalEls={homeElements.length}></S.FillVerticalBar>
+          </S.VerticalBar>
         </S.Wrapper>
-        <S.VerticalBar>
-          <S.FillVerticalBar $curFilled={_currentPage} $totalEls={homeElements.length}></S.FillVerticalBar>
-        </S.VerticalBar>
       </S.ProgressBarContainer>
-      {/* <ProgressBar /> */}
     </>
   );
 };
