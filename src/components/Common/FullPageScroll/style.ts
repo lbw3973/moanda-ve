@@ -49,8 +49,8 @@ export const Elements = styled.div<{ $isCurrent: boolean }>`
 
   img {
     padding: 4px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     position: relative;
     border-radius: 15px;
     z-index: 20;
