@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import MenuModal from "../MenuModal";
-
+import ContentLoader from "react-content-loader";
 import MenuItems from "@/constants/MenuData.json";
 
 type ItemType = {
   src: string;
-  name: string;
+  name?: string;
   price: string;
   ingredient: string;
   how: string;
@@ -25,7 +25,8 @@ const MenuDetail = () => {
   const wholeCakeRef = useRef<HTMLDivElement>(null);
   const refs = [finanRef, cookieRef, biscotiRef, poundRef, bottleCakeRef, wholeCakeRef];
 
-  const handleOpenModal = (item: ItemType) => {
+  const handleOpenModal = (name: string, item: ItemType) => {
+    item.name = name;
     setSelectedItem(item);
     setIsOpen(!isOpen);
     document.body.style.overflow = "hidden";
@@ -63,11 +64,11 @@ const MenuDetail = () => {
           <S.MenuDetailDiv ref={refs[index]}>
             <S.MenuItemTitle key={index}>{title}</S.MenuItemTitle>
             <S.StoreDetail>
-              {items.map((item, idx) => (
+              {Object.entries(items).map(([name, item], idx) => (
                 <div key={idx}>
-                  <S.MenuItem onClick={() => handleOpenModal(item)}>
+                  <S.MenuItem onClick={() => handleOpenModal(name, item)}>
                     <S.MenuImage src={item.src} alt="메뉴 이미지" />
-                    <h2>{item.name}</h2>
+                    <h2>{name}</h2>
                   </S.MenuItem>
                 </div>
               ))}
