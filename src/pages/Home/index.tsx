@@ -7,6 +7,18 @@ import Intro from "@/components/Main/DeskTop/Intro";
 import NewProduct from "@/components/Main/DeskTop/NewProduct";
 import PreviewGift from "@/components/Main/DeskTop/PreviewGift";
 import PreviewInsta from "@/components/Main/DeskTop/PreviewInsta";
+import { ISwiperProps } from "@/types/swiper";
+import { Autoplay, Pagination } from "swiper/modules";
+
+const swiperProps: ISwiperProps = {
+  imageList: mainImageList_Mobile,
+  modules: [Pagination, Autoplay],
+  height: "100%",
+  width: "100%",
+  pagination: true,
+  spaceBetween: 0,
+  useNavigation: false,
+};
 
 const Home = () => {
   const { isMobileView } = useScreenSizeStore();
@@ -14,7 +26,7 @@ const Home = () => {
   return (
     <section style={{ position: "relative" }}>
       {isMobileView ? (
-        <Swiper imageList={mainImageList_Mobile} width="100%" height="100%" />
+        <Swiper props={swiperProps} />
       ) : (
         <FullPageScroll>
           <Intro />
