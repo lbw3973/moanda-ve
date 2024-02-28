@@ -32,3 +32,10 @@
   font-weight: 600;
   src: url("./Jua.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Catamaran";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Catamaran.ttf") format("truetype");
+}
