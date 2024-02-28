@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.header<{ $isScrolled: boolean }>`
   width: 100%;
-  height: ${({ $isScrolled }) => ($isScrolled ? "60px" : "80px")};
+  height: ${({ $isScrolled }) => ($isScrolled ? "60px" : "81px")};
 
   position: fixed;
   top: 0;
