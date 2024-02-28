@@ -24,7 +24,7 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
         onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
         $width={props.width}
         $height={props.height}
-        $isBlack={props.isBlack ? props.isBlack[isBlackIndex] : false}
+        $isBlack={props.isBlack ? props.isBlack[isBlackIndex - 1] : false}
       >
         {props.imageList.map((img, index) => (
           <S.swiperSlide key={index}>

@@ -13,12 +13,7 @@ export const swiper = styled(Swiper)<{ $width: string; $height: string; $isBlack
     overflow-y: hidden;
 
     .swiper-slide {
-      img {
-        height: 100%;
-      }
-    }
-
-    .swiper-slide-active {
+      width: auto;
       position: relative;
       top: 0;
       height: ${({ $height }) => $height};
@@ -43,7 +38,7 @@ export const swiper = styled(Swiper)<{ $width: string; $height: string; $isBlack
       }
     }
   }
-  @media ${({ theme }) => theme.windowSize.medium} {
+  @media ${({ theme }) => theme.windowSize.large} {
     height: 100%;
   }
 `;
