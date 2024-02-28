@@ -1,10 +1,25 @@
 import Swiper from "@/components/Swiper";
+import * as S from "./style";
 import { mainImageList_DeskTop } from "@/constants/importImage";
+import { ISwiperProps } from "@/types/swiper";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+
+const swiperProps: ISwiperProps = {
+  imageList: mainImageList_DeskTop,
+  isBlack: [true, false],
+  modules: [EffectFade, Autoplay, Navigation],
+  height: "calc(100vh - 80px)",
+  width: "100%",
+  pagination: true,
+  spaceBetween: 0,
+  useNavigation: true,
+};
 
 const Intro = () => {
   return (
-    <div style={{ position: "relative" }}>
-      <Swiper imageList={mainImageList_DeskTop} width="100%" height="calc(100vh - 80px)" />
+    <S.Container>
+      <Swiper props={swiperProps} />
       <div
         style={{
           position: "absolute",
@@ -17,7 +32,7 @@ const Intro = () => {
       >
         이미지 준비중...
       </div>
-    </div>
+    </S.Container>
   );
 };
 
