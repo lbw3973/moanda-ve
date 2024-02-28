@@ -18,11 +18,11 @@ const PreviewGift = () => {
   return (
     <S.Container>
       <S.ContentWrapper>
-        <h1>
+        <h2>
           Moanda've
           <br />
-          Gift Ideas
-        </h1>
+          <span>Gift Ideas</span>
+        </h2>
       </S.ContentWrapper>
       <S.SwiperWrapper>
         <Swiper props={swiperProps} />

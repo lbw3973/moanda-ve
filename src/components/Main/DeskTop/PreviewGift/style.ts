@@ -18,23 +18,29 @@ export const ContentWrapper = styled.div`
   padding: 0 60px;
   margin: 0 auto;
 
-  h1 {
+  h2 {
     position: absolute;
-    top: 15%;
-    font-family: "Jua";
+    top: 5%;
+    font-family: "Catamaran";
     letter-spacing: 2px;
     font-size: 80px;
     font-weight: 600;
     line-height: 1.2;
     z-index: 100;
+    text-align: left;
 
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: red;
-      margin-left: 16px;
+    span {
+      display: block;
+      padding-left: 120px;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        margin-left: 16px;
+      }
     }
   }
 `;
