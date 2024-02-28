@@ -30,9 +30,8 @@ const GiftItemList = () => {
           <S.GiftItemBoxImg>
             <Swiper
               className="swiper"
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Autoplay]}
               slidesPerView={3}
-              pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}
               loop={true}
             >
@@ -56,45 +55,6 @@ const GiftItemList = () => {
           </S.GiftItemImg>
         </S.GiftItem>
       ))}
-      <S.GiftItemHeader>
-        <p>3000~6000원대</p>
-        <p>연노랑박스</p>
-      </S.GiftItemHeader>
-      <S.GiftItemBoxImg>
-        <img src="./gift/1/연노랑박스.jpg" alt="박스이미지1" />
-        <img src="./gift/1/결혼답례품.jpg" alt="박스이미지2" />
-      </S.GiftItemBoxImg>
-      <div>
-        <h2>4000원 미니쿠키2종</h2>
-        <h2>5600원 휘낭시에2종</h2>
-        <h2>6000원 미니쿠키3종</h2>
-      </div>
-      <div>
-        <h3>인포메세지</h3>
-      </div>
-      <div>
-        <h1>참고용 사진</h1>
-        <div>
-          <div>
-            <img src="" alt="미니쿠키2종" />
-            <h2>미니쿠키2종</h2>
-          </div>
-          <div>
-            <img src="" alt="휘낭시에2종" />
-            <h2>휘낭시에2종</h2>
-          </div>
-        </div>
-        <div>
-          <div>
-            <img src="" alt="미니쿠키3종" />
-            <h2>미니쿠키3종</h2>
-          </div>
-          <div>
-            <img src="" alt="결혼식답례품" />
-            <h2>결혼식답례품</h2>
-          </div>
-        </div>
-      </div>
     </S.GiftItems>
   );
 };
