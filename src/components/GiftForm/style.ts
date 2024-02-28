@@ -6,7 +6,7 @@ export const GiftContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  img {
+  .poster {
     max-width: 70%;
     @media ${({ theme }) => theme.windowSize.medium} {
       max-width: 100%;
