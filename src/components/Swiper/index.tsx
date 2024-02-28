@@ -1,30 +1,44 @@
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import * as S from "./style";
-import { Autoplay, Pagination } from "swiper/modules";
+import { ISwiperProps } from "@/types/swiper";
+import { useState } from "react";
 
-const Swiper = ({ imageList, width, height }: { imageList: string[]; width: string; height: string }) => {
+const Swiper = ({ props }: { props: ISwiperProps }) => {
+  const [isBlackIndex, setIsBlackIndex] = useState(1);
+
   return (
     <>
       <S.swiper
-        modules={[Pagination, Autoplay]}
+        modules={props.modules}
+        effect="fade"
         slidesPerView={1}
+        spaceBetween={props.spaceBetween}
         scrollbar={{ draggable: true }}
         navigation
-        pagination={{ clickable: true }}
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // }}
-        className="relative h-full"
-        $width={width}
-        $height={height}
+        pagination={{ clickable: props.pagination }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
+        $width={props.width}
+        $height={props.height}
+        $isBlack={props.isBlack ? props.isBlack[isBlackIndex] : false}
       >
-        {imageList.map((img, index) => (
+        {props.imageList.map((img, index) => (
           <S.swiperSlide key={index}>
             <img src={img} />
           </S.swiperSlide>
         ))}
+        {props.useNavigation && (
+          <S.NavigationBar>
+            <p>
+              <span>{isBlackIndex}</span>/ <span>{props.imageList.length}</span>
+            </p>
+          </S.NavigationBar>
+        )}
+        {props.children}
       </S.swiper>
     </>
   );
