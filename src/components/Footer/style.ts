@@ -105,6 +105,7 @@ export const OwnerInfoContaier = styled.div`
   padding: 20px 0;
   @media ${({ theme }) => theme.windowSize.large} {
     display: flex;
+    white-space: nowrap;
 
     div {
       display: flex;
