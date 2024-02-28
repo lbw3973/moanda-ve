@@ -52,6 +52,10 @@ export const Elements = styled.div<{ $isCurrent: boolean }>`
   z-index: 20;
   position: relative;
 
+  &:hover {
+    background-color: #ecadb3;
+  }
+
   img {
     padding: 4px;
     width: 30px;
