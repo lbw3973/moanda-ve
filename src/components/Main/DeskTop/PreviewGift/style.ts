@@ -21,11 +21,11 @@ export const ContentWrapper = styled.div`
   h1 {
     position: absolute;
     top: 15%;
-    font-family: "GmarketSans";
-    font-size: 72px;
+    font-family: "Jua";
+    letter-spacing: 2px;
+    font-size: 80px;
     font-weight: 600;
     line-height: 1.2;
-
     z-index: 100;
 
     &::after {
@@ -44,7 +44,12 @@ export const SwiperWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 60%;
+  height: 80%;
 
   overflow: hidden;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 `;

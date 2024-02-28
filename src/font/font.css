@@ -6,8 +6,29 @@
 }
 
 @font-face {
-  font-family: 'GmarketSans';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-  font-weight: normal;
+  font-family: "GmarketSans";
   font-style: normal;
+  font-weight: normal;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "LilitaOne";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./LilitaOne.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alata";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Alata.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jua";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Jua.ttf") format("truetype");
 }
