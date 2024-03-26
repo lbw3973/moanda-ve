@@ -1,7 +1,7 @@
 const NewProduct = () => {
   return (
     <div className="fps_child">
-      <img src="https://picsum.photos/1600/700" />
+      <img src="https://picsum.photos/1600/700" width="100%" />
       <div
         style={{
           position: "absolute",
