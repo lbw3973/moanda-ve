@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  @media ${({ theme }) => theme.windowSize.large} {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 80px);
-    width: 100%;
-    text-align: center;
-  }
+  position: relative;
+  top: 0;
+  height: calc(100vh - 80px);
+  width: 100%;
+  text-align: center;
 `;
 
 export const ContentWrapper = styled.div`

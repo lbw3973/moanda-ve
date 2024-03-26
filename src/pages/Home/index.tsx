@@ -26,7 +26,12 @@ const Home = () => {
   return (
     <section style={{ position: "relative" }}>
       {isMobileView ? (
-        <Swiper props={swiperProps} />
+        <>
+          <Intro />
+          <NewProduct />
+          <PreviewGift />
+          <PreviewInsta />
+        </>
       ) : (
         <FullPageScroll>
           <Intro />
