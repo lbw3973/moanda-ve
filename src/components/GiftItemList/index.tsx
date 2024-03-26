@@ -1,21 +1,20 @@
-import React from "react";
 import * as S from "./style";
 
 import GiftItems from "@/constants/GiftData.json";
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-type GiftItemType = {
-  name: string;
-  src: string;
-  price: string;
-  info: string[];
-};
+// type GiftItemType = {
+//   name: string;
+//   src: string;
+//   price: string;
+//   info: string[];
+// };
 const GiftItemList = () => {
   return (
     <S.GiftItems>
@@ -45,11 +44,11 @@ const GiftItemList = () => {
           <S.GiftItemImg>
             {item.components.map((data, index) => (
               <div>
+                <img src={data.src} alt="이미지" />
                 <div key={index}>
                   <h1>{data.name}</h1>
                   <h2>{data.price}원</h2>
                 </div>
-                <img src={data.src} alt="이미지" />
               </div>
             ))}
           </S.GiftItemImg>

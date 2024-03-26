@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import MenuModal from "../MenuModal";
-import ContentLoader from "react-content-loader";
 import MenuItems from "@/constants/MenuData.json";
 
 type ItemType = {

@@ -68,7 +68,7 @@ export const GiftItemBoxImg = styled.div`
   justify-content: center;
   align-items: center;
   .swiper {
-    border: 3px solid #b28d77;
+    border: 2px solid #b28d77;
     border-radius: 20px;
     padding: 15px 5px;
     display: flex;
@@ -99,21 +99,23 @@ export const GiftItemImg = styled.div`
   width: 1000px;
   justify-content: center;
   div {
-    border: 4px solid #b1825e;
+    /* border: 2px solid #b1825e; */
     border-radius: 10px;
     width: 100%;
     margin: 0 5px;
+    padding: 10px;
     div {
       margin-bottom: 10px;
       border: none;
       padding: 10px 0;
+
       h1 {
-        font-size: 30px;
-        margin-bottom: 20px;
+        font-size: 25px;
+        margin-bottom: 10px;
         color: #b1825e;
       }
       h2 {
-        font-size: 20px;
+        font-size: 16px;
         color: gray;
       }
     }
@@ -121,6 +123,7 @@ export const GiftItemImg = styled.div`
       width: 300px;
       height: 375px;
       border-radius: 10px;
+      border: 2px solid #b1825e;
     }
   }
   h1 {
