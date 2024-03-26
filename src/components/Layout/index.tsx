@@ -11,6 +11,7 @@ const Layout = () => {
 
   const resizeEvent = () => {
     setScreenSize(window.innerWidth < 769);
+    console.log(window.innerWidth);
   };
   useEffect(() => {
     window.addEventListener("resize", resizeEvent);
