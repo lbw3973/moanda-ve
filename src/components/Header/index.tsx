@@ -5,7 +5,7 @@ import HamburgerMenu from "../HamburgerMenu";
 import { Link, NavLink } from "react-router-dom";
 
 const Menus = {
-  intro: "카페 소개",
+  intro: "모앤더비 소개",
   menu: "메뉴 소개",
   gift: "답례품",
   gallery: "갤러리",

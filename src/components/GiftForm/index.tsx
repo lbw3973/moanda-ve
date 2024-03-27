@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./style";
 import GiftItemList from "../GiftItemList";
 const GiftForm = () => {

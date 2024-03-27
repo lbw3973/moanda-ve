@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.header<{ $isScrolled: boolean }>`
   width: 100%;
-  height: ${({ $isScrolled }) => ($isScrolled ? "60px" : "80px")};
+  height: ${({ $isScrolled }) => ($isScrolled ? "60px" : "81px")};
 
   position: fixed;
   top: 0;
@@ -29,25 +29,28 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
 
 export const Wrapper = styled.div`
   position: relative;
-  /* PC */
-  @media ${({ theme }) => theme.windowSize.large} {
-    width: 1000px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 
-    img {
-      width: 120px;
-    }
+  img {
+    width: 120px;
+  }
 
-    .toHome {
-      display: none;
-    }
+  .toHome {
+    display: none;
   }
 
   /* Tablet */
   @media ${({ theme }) => theme.windowSize.medium} {
+    display: block;
+    width: auto;
+    font-weight: 400;
+    .toHome {
+      display: block;
+    }
     a {
       img {
         width: 90px;
@@ -67,37 +70,35 @@ export const Wrapper = styled.div`
 `;
 
 export const Menus = styled.div<{ $isClicked: boolean }>`
-  /* PC */
-  @media ${({ theme }) => theme.windowSize.large} {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 
-    div {
-      a {
-        display: inline-block;
-        color: #242424;
-        cursor: pointer;
-        padding: 4px;
-        transition-duration: 300ms;
-        @media (hover: hover) {
-          &:hover {
-            color: ${({ theme }) => theme.color.primary_normal};
-            transform: translateY(-5px);
-          }
+  div {
+    a {
+      display: inline-block;
+      color: #242424;
+      cursor: pointer;
+      padding: 4px;
+      transition-duration: 300ms;
+      @media (hover: hover) {
+        &:hover {
+          color: ${({ theme }) => theme.color.primary_normal};
+          transform: translateY(-5px);
         }
       }
-      .active {
-        color: ${({ theme }) => theme.color.primary_normal};
-      }
     }
-    .mobile_wrapper {
-      display: none;
+    .active {
+      color: ${({ theme }) => theme.color.primary_normal};
     }
+  }
+  .mobile_wrapper {
+    display: none;
   }
 
   /* Tablet, Mobile */
   @media ${({ theme }) => theme.windowSize.medium} {
+    display: block;
     .mobile_wrapper {
       display: ${({ $isClicked }) => ($isClicked ? "block" : "none")};
       position: fixed;
@@ -138,6 +139,11 @@ export const Menus = styled.div<{ $isClicked: boolean }>`
         line-height: 44.8px;
         border-radius: 10px;
         z-index: 100;
+
+        &:hover {
+          color: inherit;
+          transform: none;
+        }
       }
       .active {
         /* color: ${({ theme }) => theme.color.secondary_light}; */

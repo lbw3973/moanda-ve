@@ -15,27 +15,15 @@ const fadeInMove = keyframes`
 }
 `;
 
-const fadeInMoveMobile = keyframes`
-0% {
-  opacity: 0;
-
-}
-100% {
-  opacity: 1;
-
-}
-`;
-
 export const MenuDetailContainer = styled.div`
   visibility: hidden;
   .visible {
     visibility: visible;
     opacity: 0;
-    @media ${({ theme }) => theme.windowSize.large} {
+    animation: ${fadeInMove} 1.5s forwards ease-in-out;
+
+    @media ${({ theme }) => theme.windowSize.small} {
       animation: ${fadeInMove} 1.5s forwards ease-in-out;
-    }
-    @media ${({ theme }) => theme.windowSize.medium} {
-      animation: ${fadeInMoveMobile} 1.5s forwards ease-in-out;
     }
   }
 `;
@@ -44,15 +32,15 @@ export const MenuDetailDiv = styled.div``;
 
 export const StoreDetail = styled.div`
   display: grid;
-
-  @media ${({ theme }) => theme.windowSize.medium} {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media ${({ theme }) => theme.windowSize.small} {
-    grid-template-columns: repeat(2, 1fr);
-  }
   grid-template-columns: repeat(6, 1fr);
   margin-bottom: 30px;
+
+  @media ${({ theme }) => theme.windowSize.large} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media ${({ theme }) => theme.windowSize.medium} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   div {
     display: flex;

@@ -1,20 +1,11 @@
 import * as S from "./style";
-
 import GiftItems from "@/constants/GiftData.json";
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
-// type GiftItemType = {
-//   name: string;
-//   src: string;
-//   price: string;
-//   info: string[];
-// };
 const GiftItemList = () => {
   return (
     <S.GiftItems>

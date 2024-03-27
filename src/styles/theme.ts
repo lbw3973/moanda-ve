@@ -1,7 +1,20 @@
+const sizes = {
+  xsmall: 375,
+  small: 450,
+  medium: 768,
+  large: 1024,
+  xlarge: 1280,
+  txlarge: 1600,
+};
+
 const windowSize = {
-  small: "screen and (max-width: 450px)",
-  medium: "screen and (max-width: 768px)",
-  large: "screen and (min-width: 769px)",
+  xsmall: `screen and (max-width: ${sizes.xsmall}px)`,
+  small: `screen and (max-width: ${sizes.small}px)`,
+  medium: `screen and (max-width: ${sizes.medium}px)`,
+  // large: `screen and (min-width: ${sizes.medium + 1}px)`,
+  large: `screen and (max-width: ${sizes.large}px)`,
+  xlarge: `screen and (max-width: ${sizes.xlarge}px)`,
+  txlarge: `screen and (max-width: ${sizes.txlarge}px)`,
 };
 
 const fontSize = {

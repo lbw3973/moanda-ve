@@ -1,7 +1,10 @@
+import { useScreenSizeStore } from "@/stores/screenSizeStore";
+
 const PreviewInsta = () => {
+  const { isMobileView } = useScreenSizeStore();
   return (
     <div className="fps_child">
-      <img src="/test3.jpg" />
+      <img src={isMobileView ? "https://picsum.photos/400/300" : "https://picsum.photos/1600/700"} width="100%" />
       <div
         style={{
           position: "absolute",
