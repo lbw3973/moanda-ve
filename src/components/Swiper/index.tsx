@@ -17,10 +17,10 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
         scrollbar={{ draggable: true }}
         navigation
         pagination={{ clickable: props.pagination }}
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
         $width={props.width}
         $height={props.height}
