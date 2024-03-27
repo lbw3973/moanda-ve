@@ -51,14 +51,20 @@ export const GiftItems = styled.div`
 export const GiftItem = styled.div`
   margin: 100px 0;
   font-family: "GmarketSans", serif;
+  border: 1px solid #b1825e;
+  padding: 0 40px;
+  border-radius: 50px;
 `;
 export const GiftItemHeader = styled.div`
   font-size: large;
-  margin: 10px 0;
+  margin: 20px 0;
   p {
     font-size: 40px;
     font-weight: bold;
     color: #b1825e;
+    line-height: 40px;
+    text-align: center;
+    padding-top: 7px;
   }
 `;
 export const GiftItemBoxImg = styled.div`
@@ -68,8 +74,9 @@ export const GiftItemBoxImg = styled.div`
   justify-content: center;
   align-items: center;
   .swiper {
-    border: 2px solid #b28d77;
-    border-radius: 20px;
+    border-top: 2px solid #b1825e;
+    border-bottom: 2px solid #b1825e;
+    /* border-radius: 20px; */
     padding: 15px 5px;
     display: flex;
     justify-content: center;
@@ -93,37 +100,50 @@ export const GiftItemBoxImg = styled.div`
 `;
 
 export const GiftItemImg = styled.div`
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
-  width: 1000px;
+
   justify-content: center;
   div {
     /* border: 2px solid #b1825e; */
     border-radius: 10px;
     width: 100%;
-    margin: 0 5px;
+
     padding: 10px;
+
+    img {
+      min-width: 180px;
+      width: 100%;
+      min-height: 250px;
+      max-height: 350px;
+      border-radius: 10px;
+      border: 2px solid #b1825e;
+    }
+
     div {
       margin-bottom: 10px;
       border: none;
       padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
 
       h1 {
-        font-size: 25px;
+        white-space: nowrap;
+        font-size: 18px;
         margin-bottom: 10px;
+
         color: #b1825e;
+        text-align: center;
       }
       h2 {
         font-size: 16px;
+
         color: gray;
       }
-    }
-    img {
-      width: 300px;
-      height: 375px;
-      border-radius: 10px;
-      border: 2px solid #b1825e;
     }
   }
   h1 {

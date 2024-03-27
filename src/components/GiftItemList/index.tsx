@@ -10,8 +10,9 @@ const GiftItemList = () => {
   return (
     <S.GiftItems>
       <S.GiftLine></S.GiftLine>
-      <h1>답례품 리스트</h1>
-      <h2>MOANDA`VE</h2>
+      {/* <h1>답례품 리스트</h1>
+      <h2>MOANDA`VE</h2> */}
+      <img src="/giftTitle.png" alt="" />
       {Object.entries(GiftItems).map(([title, item], index) => (
         <S.GiftItem>
           <S.GiftItemHeader key={index}>
