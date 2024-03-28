@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 const swiperProps: ISwiperProps = {
   imageList: mainImageList_DeskTop,
-  isBlack: [true, false],
+  isBlack: [false, true],
   modules: [EffectFade, Autoplay, Navigation],
   height: "calc(100vh - 80px)",
   width: "100%",

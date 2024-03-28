@@ -9,15 +9,11 @@ export const Container = styled.header<{ $isScrolled: boolean }>`
   z-index: 100;
   background-color: ${({ theme }) => theme.color.primary_light};
   box-shadow: 0px 4px 13px -5px rgba(50, 50, 93, 0.25);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 0 10px;
-
   font-family: "NanumSquareNeo";
-
   transition-duration: 300ms;
 
   /* Tablet, Mobile */
