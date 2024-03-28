@@ -8,7 +8,7 @@ const AreaElements = [
 
 type ItemType = {
   src: string;
-  name: string;
+  name?: string;
   price: string;
   ingredient: string;
   how: string;
