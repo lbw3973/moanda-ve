@@ -49,8 +49,9 @@ const MenuDetail = () => {
     };
   }, []);
 
-  const clickClose = () => {
-    if (isOpen) {
+  const clickClose = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
+    if (isOpen && target.nodeName === "SECTION") {
       setIsOpen(false);
       document.body.style.overflow = "auto";
     }
