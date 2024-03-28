@@ -1,9 +1,10 @@
+import * as S from "./style";
 import { useScreenSizeStore } from "@/stores/screenSizeStore";
 
 const NewProduct = () => {
   const { isMobileView } = useScreenSizeStore();
   return (
-    <div className="fps_child">
+    <S.Container className="fps_child">
       <img src={isMobileView ? "https://picsum.photos/400/300" : "https://picsum.photos/1600/700"} width="100%" />
       <div
         style={{
@@ -17,7 +18,7 @@ const NewProduct = () => {
       >
         이미지 준비중...
       </div>
-    </div>
+    </S.Container>
   );
 };
 

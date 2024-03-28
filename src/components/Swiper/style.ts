@@ -35,6 +35,9 @@ export const swiper = styled(Swiper)<{ $width: string; $height: string; $isBlack
     &::after {
       font-size: 60px;
     }
+    @media ${({ theme }) => theme.windowSize.medium} {
+      margin: 0 10px;
+    }
   }
 `;
 
