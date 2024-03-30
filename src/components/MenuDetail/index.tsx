@@ -71,7 +71,11 @@ const MenuDetail = () => {
       {Object.entries(MenuItems).map(([title, items], index) => (
         <S.MenuDetailContainer key={index}>
           <S.MenuDetailDiv ref={addItemRef}>
-            <S.MenuItemTitle key={index}>{title}</S.MenuItemTitle>
+            <S.MenuItemTitles>
+              <p></p>
+              <S.MenuItemTitle key={index}>{title}</S.MenuItemTitle>
+              <p></p>
+            </S.MenuItemTitles>
             <S.StoreDetail>
               {Object.entries(items).map(([name, item], idx) => (
                 <div key={idx}>

@@ -34,7 +34,7 @@ export const StoreDetail = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-row-gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
     grid-template-columns: repeat(5, 1fr);
@@ -47,6 +47,7 @@ export const StoreDetail = styled.div`
   }
   @media screen and (max-width: 550px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
   }
 
   div {
@@ -89,23 +90,37 @@ export const MenuItem = styled.div`
   h2 {
     width: 120px;
     text-align: center;
+    color: #808080;
   }
 
   transition: all 0.1s ease-in-out;
-  &:hover {
-    opacity: 0.5;
+
+  @media (min-width: 768px) {
+    &:hover {
+      opacity: 0.5;
+    }
   }
 `;
 
 export const MenuItemTitle = styled.h1`
-  width: 70%;
-  height: 40px;
-  font-size: 30px;
-  border-bottom: 1px solid #999;
-  font-weight: bold;
-  font-family: "NanumSquareNeo";
-  margin: 30px 0;
-  padding-bottom: 10px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
+  color: #fafafa;
+  white-space: nowrap;
+  background-color: #7b5339;
+  padding: 11px 30px 8px 30px;
+  border-radius: 30px;
+`;
+export const MenuItemTitles = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  p {
+    width: 50%;
+    background-color: #d3a47f;
+    height: 3px;
+  }
 `;
 
 export const MenuModal = styled.div<IModalProps>`
