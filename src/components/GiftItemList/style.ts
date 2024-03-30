@@ -20,7 +20,7 @@ export const GiftItems = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "GmarketSans", serif;
+  font-family: "NanumSquareNeo";
   font-weight: 400;
   font-style: normal;
   span {
@@ -54,7 +54,7 @@ export const GiftTitle = styled.img``;
 
 export const GiftItem = styled.div`
   margin: 100px 0;
-  font-family: "GmarketSans", serif;
+  font-family: "NanumSquareNeo";
   border: 1px solid #b1825e;
   padding: 0 20px;
   border-radius: 50px;
