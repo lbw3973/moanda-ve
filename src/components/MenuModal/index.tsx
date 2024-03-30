@@ -61,8 +61,8 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
             <h1>주성분</h1>
             <div>
               {item?.ingredient.includes("\n")
-                ? item?.ingredient.split("\n").map(data => (
-                    <span>
+                ? item?.ingredient.split("\n").map((data, index) => (
+                    <span key={index}>
                       {data}
                       <br />
                     </span>

@@ -16,13 +16,8 @@ const MenuDetail = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ItemType | undefined>();
 
-  const finanRef = useRef<HTMLDivElement>(null);
-  const cookieRef = useRef<HTMLDivElement>(null);
-  const biscotiRef = useRef<HTMLDivElement>(null);
-  const poundRef = useRef<HTMLDivElement>(null);
-  const bottleCakeRef = useRef<HTMLDivElement>(null);
-  const wholeCakeRef = useRef<HTMLDivElement>(null);
-  const refs = [finanRef, cookieRef, biscotiRef, poundRef, bottleCakeRef, wholeCakeRef];
+  const containerRef = useRef<HTMLInputElement>(null);
+  const itemRefs = useRef<HTMLDivElement[]>([]);
 
   const handleOpenModal = (name: string, item: ItemType) => {
     item.name = name;
@@ -31,23 +26,11 @@ const MenuDetail = () => {
     document.body.style.overflow = "hidden";
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      refs.forEach(ref => {
-        const offset = ref.current?.offsetTop as number;
-        if (window.scrollY + window.innerHeight >= offset) {
-          ref.current?.classList.add("visible");
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const addItemRef = (el: HTMLDivElement) => {
+    if (el && !itemRefs.current.includes(el)) {
+      itemRefs.current.push(el);
+    }
+  };
 
   const clickClose = () => {
     if (isOpen) {
@@ -56,11 +39,38 @@ const MenuDetail = () => {
     }
   };
 
+  useEffect(() => {
+    if (itemRefs.current.length === 0) {
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px", threshold: 0.2 },
+    );
+
+    itemRefs.current.forEach(el => {
+      observer.observe(el);
+    });
+
+    return () => {
+      itemRefs.current.forEach(el => {
+        observer.unobserve(el);
+      });
+    };
+  }, [itemRefs.current.length]);
+
   return (
-    <div onClick={clickClose}>
+    <div onClick={clickClose} ref={containerRef}>
       {Object.entries(MenuItems).map(([title, items], index) => (
         <S.MenuDetailContainer key={index}>
-          <S.MenuDetailDiv ref={refs[index]}>
+          <S.MenuDetailDiv ref={addItemRef}>
             <S.MenuItemTitle key={index}>{title}</S.MenuItemTitle>
             <S.StoreDetail>
               {Object.entries(items).map(([name, item], idx) => (

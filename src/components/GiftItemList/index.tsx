@@ -5,10 +5,18 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const GiftItemList = () => {
   const [swiperView, setSwiperView] = useState(0);
+  const containerRef = useRef<HTMLInputElement>(null);
+  const itemRefs = useRef<HTMLDivElement[]>([]);
+
+  const addItemRef = (el: HTMLDivElement) => {
+    if (el && !itemRefs.current.includes(el)) {
+      itemRefs.current.push(el);
+    }
+  };
 
   const handleResize = () => {
     if (window.innerWidth > 768) {
@@ -29,13 +37,41 @@ const GiftItemList = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (itemRefs.current.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px", threshold: 0.2 },
+    );
+
+    itemRefs.current.forEach(el => {
+      observer.observe(el);
+    });
+
+    return () => {
+      itemRefs.current.forEach(el => {
+        observer.unobserve(el);
+      });
+    };
+  }, [itemRefs.current.length]);
+
   const clickImage = () => {};
   return (
-    <S.GiftItems>
+    <S.GiftItems ref={containerRef}>
       <S.GiftLine></S.GiftLine>
       <S.GiftTitle src="/giftTitle.png" alt="" />
       {Object.entries(GiftItems).map(([title, item], index) => (
-        <S.GiftItem key={index}>
+        <S.GiftItem key={index} ref={addItemRef} className="observer">
           <S.GiftItemHeader>
             <p>{title}</p>
           </S.GiftItemHeader>
@@ -60,7 +96,7 @@ const GiftItemList = () => {
             {item.components.map((data, index) => (
               <div key={index}>
                 <img src={data.src} alt="이미지" onClick={clickImage} />
-                <div key={index}>
+                <div>
                   <h1>{data.name}</h1>
                   <h2>{data.price}원</h2>
                 </div>
