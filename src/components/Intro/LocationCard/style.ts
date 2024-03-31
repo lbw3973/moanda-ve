@@ -6,11 +6,5 @@ export const LocationCardContainer = styled.div`
   height: 280px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-
-  @media ${({ theme }) => theme.windowSize.large} {
-    width: 50%;
-  }
-  @media ${({ theme }) => theme.windowSize.medium} {
-    width: 100%;
-  }
+  width: 100%;
 `;

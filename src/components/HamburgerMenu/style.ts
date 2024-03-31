@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  @media ${({ theme }) => theme.windowSize.large} {
-    display: none;
+  display: none;
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    z-index: 50;
   }
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  z-index: 50;
 `;
 
 export const ClickArea = styled.button`

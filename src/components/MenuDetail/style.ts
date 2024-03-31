@@ -15,27 +15,15 @@ const fadeInMove = keyframes`
 }
 `;
 
-const fadeInMoveMobile = keyframes`
-0% {
-  opacity: 0;
-
-}
-100% {
-  opacity: 1;
-
-}
-`;
-
 export const MenuDetailContainer = styled.div`
   visibility: hidden;
   .visible {
     visibility: visible;
     opacity: 0;
-    @media ${({ theme }) => theme.windowSize.large} {
+    animation: ${fadeInMove} 1.5s forwards ease-in-out;
+
+    @media ${({ theme }) => theme.windowSize.small} {
       animation: ${fadeInMove} 1.5s forwards ease-in-out;
-    }
-    @media ${({ theme }) => theme.windowSize.medium} {
-      animation: ${fadeInMoveMobile} 1.5s forwards ease-in-out;
     }
   }
 `;
@@ -44,15 +32,22 @@ export const MenuDetailDiv = styled.div``;
 
 export const StoreDetail = styled.div`
   display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 30px;
+  margin-bottom: 30px;
 
-  @media ${({ theme }) => theme.windowSize.medium} {
+  @media ${({ theme }) => theme.windowSize.xlarge} {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media ${({ theme }) => theme.windowSize.large} {
     grid-template-columns: repeat(4, 1fr);
   }
-  @media ${({ theme }) => theme.windowSize.small} {
+  @media ${({ theme }) => theme.windowSize.medium} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 550px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  grid-template-columns: repeat(6, 1fr);
-  margin-bottom: 30px;
 
   div {
     display: flex;
@@ -62,8 +57,25 @@ export const StoreDetail = styled.div`
 
 export const MenuImage = styled.img`
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
+
+  @media ${({ theme }) => theme.windowSize.xlarge} {
+    width: 160px;
+    height: 160px;
+  }
+  @media ${({ theme }) => theme.windowSize.large} {
+    width: 150px;
+    height: 150px;
+  }
+  @media ${({ theme }) => theme.windowSize.medium} {
+    width: 160px;
+    height: 160px;
+  }
+  @media ${({ theme }) => theme.windowSize.small} {
+    width: 130px;
+    height: 130px;
+  }
 `;
 
 export const MenuItem = styled.div`
@@ -86,13 +98,14 @@ export const MenuItem = styled.div`
 `;
 
 export const MenuItemTitle = styled.h1`
-  width: 320px;
+  width: 70%;
   height: 40px;
   font-size: 30px;
   border-bottom: 1px solid #999;
   font-weight: bold;
   font-family: "NanumSquareNeo";
-  margin-top: 30px;
+  margin: 30px 0;
+  padding-bottom: 10px;
 `;
 
 export const MenuModal = styled.div<IModalProps>`
