@@ -27,20 +27,15 @@ export const IntroSection = styled.section`
   margin: 0 auto;
   overflow: hidden;
   visibility: hidden;
-
-  @media ${({ theme }) => theme.windowSize.large} {
-    width: 1000px;
-    padding: 20px 20px 0;
-  }
+  padding: 20px 20px 0;
 
   .visible {
     visibility: visible;
     opacity: 0;
     position: relative;
     right: -100px;
-    @media ${({ theme }) => theme.windowSize.large} {
-      animation: ${fadeInMove} 1s forwards;
-    }
+    animation: ${fadeInMove} 1s forwards;
+
     @media ${({ theme }) => theme.windowSize.medium} {
       animation: ${fadeInMoveMobile} 1s forwards;
     }
