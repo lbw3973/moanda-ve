@@ -103,19 +103,20 @@ export const MenuItem = styled.div`
 `;
 
 export const MenuItemTitle = styled.h1`
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 20px;
+  line-height: 20px;
   font-weight: 600;
   color: #fafafa;
   white-space: nowrap;
   background-color: #7b5339;
-  padding: 11px 30px 8px 30px;
+  padding: 8px 30px;
   border-radius: 30px;
 `;
 export const MenuItemTitles = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
   p {
     width: 50%;
     background-color: #d3a47f;

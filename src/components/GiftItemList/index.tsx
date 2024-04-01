@@ -65,6 +65,12 @@ const GiftItemList = () => {
     };
   }, [itemRefs.current.length]);
 
+  const getBoxImgName = (paths: string) => {
+    const parts = paths.split("/");
+    const fileName = parts[parts.length - 1];
+    return fileName.split(".")[0];
+  };
+
   const clickImage = () => {};
   return (
     <S.GiftItems ref={containerRef}>
@@ -87,7 +93,7 @@ const GiftItemList = () => {
               {item.boxImages.map((img, index) => (
                 <SwiperSlide key={index} className="swiperSlide">
                   <img src={img} alt="박스이미지" className="swiperImage" />
-                  <p>결혼식 답례품</p>
+                  <p>{getBoxImgName(img)}</p>
                 </SwiperSlide>
               ))}
             </Swiper>
