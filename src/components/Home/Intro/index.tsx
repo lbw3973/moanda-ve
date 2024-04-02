@@ -1,9 +1,9 @@
-import Swiper from "@/components/Swiper";
 import * as S from "./style";
 import { mainImageList_DeskTop } from "@/constants/importImage";
 import { ISwiperProps } from "@/types/swiper";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
+import Swiper from "@/components/Common/Swiper";
 
 const swiperProps: ISwiperProps = {
   imageList: mainImageList_DeskTop,
@@ -29,9 +29,7 @@ const Intro = () => {
           zIndex: "1000",
           transform: "translate(-50%, -50%)",
         }}
-      >
-        이미지 준비중...
-      </div>
+      ></div>
     </S.Container>
   );
 };

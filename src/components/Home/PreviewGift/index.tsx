@@ -1,4 +1,4 @@
-import Swiper from "@/components/Swiper";
+import Swiper from "@/components/Common/Swiper";
 import * as S from "./style";
 import { mainImageList_DeskTop_Gift } from "@/constants/importImage";
 import { ISwiperProps } from "@/types/swiper";
