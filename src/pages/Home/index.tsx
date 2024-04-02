@@ -1,7 +1,7 @@
-import Intro from "@/components/Main/DeskTop/Intro";
-import NewProduct from "@/components/Main/DeskTop/NewProduct";
-import PreviewGift from "@/components/Main/DeskTop/PreviewGift";
-import PreviewInsta from "@/components/Main/DeskTop/PreviewInsta";
+import Intro from "@/components/Home/Intro";
+import NewProduct from "@/components/Home/NewProduct";
+import PreviewGift from "@/components/Home/PreviewGift";
+import PreviewInsta from "@/components/Home/PreviewInsta";
 
 const Home = () => {
   return (

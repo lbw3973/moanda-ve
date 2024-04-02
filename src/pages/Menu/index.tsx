@@ -1,5 +1,5 @@
+import MenuDetail from "@/components/Menu/MenuDetail";
 import * as S from "./style";
-import MenuDetail from "../../components/MenuDetail";
 
 const Menu = () => {
   return (

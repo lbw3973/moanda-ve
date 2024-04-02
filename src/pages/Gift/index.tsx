@@ -1,4 +1,4 @@
-import GiftForm from "@/components/GiftForm";
+import GiftForm from "@/components/Gift/GiftForm";
 import * as S from "./style";
 
 const Gift = () => {
