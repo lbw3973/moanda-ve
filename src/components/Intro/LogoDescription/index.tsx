@@ -1,8 +1,13 @@
 import IntroHeader from "../IntroHeader";
 import Logo from "/Logo/Logo.jpg";
 import * as S from "./style";
+import { getInstagramPost } from "@/apis/instagram";
 
 const LogoDescription = () => {
+  const handleClick = async () => {
+    const res = await getInstagramPost();
+    console.log(res);
+  };
   return (
     <>
       <S.Container>
@@ -17,7 +22,7 @@ const LogoDescription = () => {
             <p className="since">(since. 2021)</p>
           </S.InformWrapper>
         </S.DescriptionContaier>
-        <S.ImageContainer>
+        <S.ImageContainer onClick={handleClick}>
           <img src="/Outside/outside_7_1.jpg" />
         </S.ImageContainer>
       </S.Container>
