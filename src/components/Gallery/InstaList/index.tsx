@@ -6,29 +6,34 @@ import InstaItem from "../InstaItem";
 import IntroHeader from "@/components/Intro/IntroHeader";
 import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useState } from "react";
+import LoadingUI from "@/components/Common/LoadingUI";
 
 const InstaList = () => {
   const [instaPosts, setInstaPosts] = useState<IResInstagram[]>([]);
   const [nextURL, setNextURL] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const { data: instagram_List, isFetched } = useQuery<IResInstagramList>({
     queryKey: ["Instagram_list"],
     queryFn: getInstagramPost,
   });
-  console.log(instaPosts);
 
   useEffect(() => {
     if (isFetched && instagram_List) {
       setInstaPosts(instagram_List.data);
       setNextURL(instagram_List.paging.next);
+      setIsLoading(false);
     }
   }, [isFetched]);
 
   const handleClickSeeMore = async () => {
+    setIsLoading(true);
     const nextPosts = await getInstagramNextPost(nextURL);
     setInstaPosts(prevPosts => [...prevPosts, ...nextPosts.data]);
     setNextURL(nextPosts.paging.next);
+    setIsLoading(false);
   };
+
   return (
     <S.Container>
       <IntroHeader headerText="모앤더비 인스타그램" />
@@ -37,6 +42,7 @@ const InstaList = () => {
         더보기
         <IoIosArrowDown />
       </S.SeeMoreContainer>
+      {isLoading && <LoadingUI />}
     </S.Container>
   );
 };
