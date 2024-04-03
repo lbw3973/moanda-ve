@@ -17,7 +17,7 @@ const InstaItem = ({ data }: { data: IResInstagram }) => {
         $isHovered={isHovered}
       >
         {data.media_type === "VIDEO" ? (
-          data.thumbnail_url && <video src={data.media_url} autoPlay muted loop />
+          <video src={data.media_url} autoPlay muted loop />
         ) : (
           <img src={data.media_url} />
         )}
