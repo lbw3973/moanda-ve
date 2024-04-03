@@ -11,7 +11,7 @@ export const getInstagramPost = async () => {
   const res = await instance.get(
     `${
       import.meta.env.VITE_MOANDAVE_USER_ID
-    }/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,children{media_type,media_url,permalink}&access_token=${
+    }/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,permalink,children{media_type,media_url,permalink}&access_token=${
       import.meta.env.VITE_MOANDAVE_TOKEN
     }&limit=12`,
   );

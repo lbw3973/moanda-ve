@@ -14,6 +14,7 @@ interface IResInstagram {
   id: string;
   media_type: TMediaType;
   media_url: string;
+  permalink: string;
   thumbnail_url?: string;
   timestamp: Date;
   children?: {
