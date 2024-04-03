@@ -56,7 +56,7 @@ export const PreviewCaption = styled.div<{ $isHovered: boolean }>`
 
   .caption {
     overflow: hidden;
-    font-size: 24px;
+    font-size: 20px;
     color: ${({ theme }) => theme.color.primary_light};
     line-height: 1.2;
     text-align: center;
@@ -67,21 +67,21 @@ export const PreviewCaption = styled.div<{ $isHovered: boolean }>`
 
     @media ${({ theme }) => theme.windowSize.large} {
       -webkit-line-clamp: 7;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media ${({ theme }) => theme.windowSize.medium} {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media screen and (max-width: 540px) {
       -webkit-line-clamp: 6;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     @media ${({ theme }) => theme.windowSize.small} {
       -webkit-line-clamp: 5;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 `;
