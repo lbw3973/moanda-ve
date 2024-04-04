@@ -33,7 +33,6 @@ const InstaModal = ({ data, closeModal }: { data: IResInstagram; closeModal: () 
     console.log("asdasd");
     setIsMuted(!isMuted);
   };
-  console.log(isMuted);
 
   useEffect(() => {
     handleResize();
@@ -49,8 +48,6 @@ const InstaModal = ({ data, closeModal }: { data: IResInstagram; closeModal: () 
       videoRef.current.muted = isMuted;
     }
   }, [isMuted]);
-
-  console.log(isScreenSizeMobile);
 
   return (
     <S.Container onClick={handleClickContainer} className="container">
@@ -109,7 +106,9 @@ const InstaModal = ({ data, closeModal }: { data: IResInstagram; closeModal: () 
             </div>
           )}
           <div className="caption">
-            {data.caption.split("\n").map(item => (item === "" ? <br /> : <p>{item}</p>))}
+            {data.caption
+              .split("\n")
+              .map((item, index) => (item === "" ? <br key={index} /> : <p key={index}>{item}</p>))}
             <p className="date">{getUploadDate(new Date(data.timestamp))}</p>
           </div>
         </div>
