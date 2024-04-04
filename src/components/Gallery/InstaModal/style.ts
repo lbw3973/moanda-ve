@@ -27,9 +27,6 @@ export const Container = styled.div`
   ::-webkit-scrollbar {
     display: block;
     width: 12px;
-    /* @media ${({ theme }) => theme.windowSize.medium} {
-      height: 20px;
-    } */
   }
 
   ::-webkit-scrollbar-thumb {
