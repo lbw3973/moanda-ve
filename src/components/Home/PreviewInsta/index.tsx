@@ -1,24 +1,27 @@
-import { useScreenSizeStore } from "@/stores/screenSizeStore";
+import InstaItem from "@/components/Gallery/InstaItem";
+import * as S from "./style";
+import { useQuery } from "@tanstack/react-query";
+import { getInstagramPost } from "@/apis/instagram";
+import { IResInstagramList } from "@/types/insta";
+import { IoArrowForward } from "react-icons/io5";
 
 const PreviewInsta = () => {
-  const { isMobileView } = useScreenSizeStore();
+  const { data: instaItems } = useQuery<IResInstagramList>({
+    queryKey: ["previewInsta"],
+    queryFn: () => getInstagramPost(3),
+  });
+
   return (
-    <div className="fps_child">
-      <img src={isMobileView ? "https://picsum.photos/400/300" : "https://picsum.photos/1600/700"} width="100%" />
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          fontSize: "60px",
-          color: "white",
-          zIndex: "1000",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        이미지 준비중...
-      </div>
-    </div>
+    <S.Container>
+      <S.Header>인스타그램</S.Header>
+      <S.InstaWrapper>
+        {instaItems && instaItems.data.map((data, index) => <InstaItem data={data} key={index} />)}
+      </S.InstaWrapper>
+      <S.MoreButton to={"/gallery"}>
+        더보기
+        <IoArrowForward />
+      </S.MoreButton>
+    </S.Container>
   );
 };
 
