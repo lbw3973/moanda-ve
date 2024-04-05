@@ -20,17 +20,34 @@ export const FirstSlideImg = styled.div`
   justify-content: center;
   width: 100%;
 
-  img {
-    height: fit-content;
-    width: fit-content;
+  .logo {
+    width: 500px;
+    height: 250px;
+
+    @media ${({ theme }) => theme.windowSize.medium} {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .flex {
+    display: flex;
+    .postitImg {
+      height: 100%;
+      width: 100%;
+    }
   }
   div {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
     flex-direction: column;
     align-items: center;
+    .logo {
+      margin-top: 50px;
+    }
     img {
       height: 100%;
       width: 100%;
@@ -39,18 +56,16 @@ export const FirstSlideImg = styled.div`
 `;
 
 export const FirstSlideText = styled.div`
-  position: absolute;
-  top: 200px;
-  left: 0;
   font-size: 14px;
   font-family: "NanumSquareNeo";
   line-height: 25px;
   word-break: keep-all;
+  padding-bottom: 200px;
   h1 {
     font-weight: 600;
   }
   @media ${({ theme }) => theme.windowSize.xlarge} {
-    top: -50px;
+    padding: 0;
   }
 `;
 
@@ -76,8 +91,11 @@ export const SecondSlide = styled.div`
     div {
       display: flex;
       flex-direction: column;
-
-      text-align: center;
+      text-align: left;
+      font-family: "NanumSquareNeo";
+      color: ${({ theme }) => theme.color.primary_light};
+      line-height: 30px;
+      padding: 50px 30px;
       h1 {
         text-align: center;
       }
@@ -97,7 +115,20 @@ export const NavigationBar = styled.div`
 
   background-color: rgba(0, 0, 0, 0.6);
   line-height: 50px;
-
+  @media ${({ theme }) => theme.windowSize.medium} {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    bottom: 2%;
+  }
+  @media ${({ theme }) => theme.windowSize.large} {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    bottom: 2%;
+  }
   p {
     display: flex;
     justify-content: center;
