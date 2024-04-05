@@ -3,7 +3,7 @@ import * as S from "./style";
 // import { ISwiperProps } from "@/types/swiper";
 // import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-
+import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const Intro = () => {
 
   return (
     <S.Container>
-      <Swiper onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}>
+      <Swiper autoHeight={true} onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}>
         <SwiperSlide>
           <S.FirstSlide>
             <S.FirstSlideImg>
@@ -36,7 +36,9 @@ const Intro = () => {
                   <p>모든 생명을 존중하는 지속 가능한 미식 경험을 제공하기 위해 노력합니다.</p>
                 </S.FirstSlideText>
               </div>
-              <img src="/Intro/intro-img.png" alt="img" className="img" />
+              <div className="flex">
+                <img src="/Intro/intro-img.png" alt="img" className="postitImg" />
+              </div>
             </S.FirstSlideImg>
           </S.FirstSlide>
         </SwiperSlide>
@@ -51,6 +53,7 @@ const Intro = () => {
             </div>
           </S.SecondSlide>
         </SwiperSlide>
+
         <S.NavigationBar>
           <p>
             <span>{isBlackIndex}</span>/ <span>2</span>
