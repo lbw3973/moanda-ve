@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
-import IntroHeader from "@/components/Intro/IntroHeader";
 
 const GiftItemList = () => {
   const [swiperView, setSwiperView] = useState(0);
