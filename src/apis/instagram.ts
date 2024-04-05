@@ -7,13 +7,13 @@ export const getUserId = async () => {
   return res;
 };
 
-export const getInstagramPost = async () => {
+export const getInstagramPost = async (limit: number) => {
   const res = await instance.get(
     `${
       import.meta.env.VITE_MOANDAVE_USER_ID
     }/media?fields=id,media_type,media_url,thumbnail_url,caption,timestamp,permalink,children{media_type,media_url,permalink}&access_token=${
       import.meta.env.VITE_MOANDAVE_TOKEN
-    }&limit=12`,
+    }&limit=${limit}`,
   );
   return res.data;
 };

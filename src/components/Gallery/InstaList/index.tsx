@@ -15,7 +15,7 @@ const InstaList = () => {
 
   const { data: instagram_List, isFetched } = useQuery<IResInstagramList>({
     queryKey: ["Instagram_list"],
-    queryFn: getInstagramPost,
+    queryFn: () => getInstagramPost(12),
   });
 
   useEffect(() => {
