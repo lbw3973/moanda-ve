@@ -11,7 +11,6 @@ const windowSize = {
   xsmall: `screen and (max-width: ${sizes.xsmall}px)`,
   small: `screen and (max-width: ${sizes.small}px)`,
   medium: `screen and (max-width: ${sizes.medium}px)`,
-  // large: `screen and (min-width: ${sizes.medium + 1}px)`,
   large: `screen and (max-width: ${sizes.large}px)`,
   xlarge: `screen and (max-width: ${sizes.xlarge}px)`,
   txlarge: `screen and (max-width: ${sizes.txlarge}px)`,
