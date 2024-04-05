@@ -5,15 +5,17 @@ export const Header = styled.div`
   justify-content: center;
   margin: 40px 0 20px;
   font-family: "GmarketSans";
-  font-size: 40px;
   color: ${({ theme }) => theme.color.primary_normal};
 
-  @media ${({ theme }) => theme.windowSize.medium} {
-    font-size: 30px;
-  }
+  h2 {
+    font-size: 40px;
+    @media ${({ theme }) => theme.windowSize.medium} {
+      font-size: 30px;
+    }
 
-  @media ${({ theme }) => theme.windowSize.small} {
-    font-size: 24px;
+    @media ${({ theme }) => theme.windowSize.small} {
+      font-size: 24px;
+    }
   }
 
   h2::after {
