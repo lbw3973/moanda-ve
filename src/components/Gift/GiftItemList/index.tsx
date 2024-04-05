@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
+import IntroHeader from "@/components/Intro/IntroHeader";
 
 const GiftItemList = () => {
   const [swiperView, setSwiperView] = useState(0);
@@ -75,7 +76,6 @@ const GiftItemList = () => {
   return (
     <S.GiftItems ref={containerRef}>
       <S.GiftLine></S.GiftLine>
-      <S.GiftTitle src="/giftTitle.png" alt="" />
       {Object.entries(GiftItems).map(([title, item], index) => (
         <S.GiftItem key={index} ref={addItemRef} className="observer">
           <S.GiftItemHeader>
@@ -98,6 +98,7 @@ const GiftItemList = () => {
               ))}
             </Swiper>
           </S.GiftItemBoxImg>
+          <h2 className="subtitle">구성품목</h2>
           <S.GiftItemImg>
             {item.components.map((data, index) => (
               <div key={index}>

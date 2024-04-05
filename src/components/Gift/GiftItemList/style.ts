@@ -43,11 +43,12 @@ export const GiftItems = styled.div`
 `;
 
 export const GiftLine = styled.span`
-  width: 100%;
+  width: 90%;
   height: 1px;
   background-color: #7b5039;
   display: block;
   margin-bottom: 10px;
+  opacity: 0.5;
 `;
 
 export const GiftTitle = styled.img``;
@@ -58,14 +59,23 @@ export const GiftItem = styled.div`
   border: 1px solid #b1825e;
   padding: 0 20px;
   border-radius: 50px;
+
+  .subtitle {
+    padding-top: 20px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: ${({ theme }) => theme.color.primary_normal};
+    font-weight: 600;
+  }
 `;
 
 export const GiftItemHeader = styled.div`
   margin: 20px 0;
   p {
     font-size: 36px;
+    letter-spacing: 2px;
     font-weight: bold;
-    color: #b1825e;
+    color: ${({ theme }) => theme.color.primary_normal};
     line-height: 40px;
     text-align: center;
     padding-top: 7px;
@@ -98,14 +108,15 @@ export const GiftItemBoxImg = styled.div`
     }
   }
   .swiperSlide {
-    height: 325px;
+    height: 335px;
     img {
       border-radius: 20px;
       width: 250px;
       height: 312px;
     }
     p {
-      height: 18px;
+      height: 28px;
+      line-height: 28px;
     }
   }
   img {
