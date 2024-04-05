@@ -17,6 +17,7 @@ export const ListWrapper = styled.div`
 
   @media ${({ theme }) => theme.windowSize.medium} {
     grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 `;
 
