@@ -8,7 +8,6 @@ const VeganDescription = () => {
     <>
       <S.Container>
         <S.ImageContainer>
-          {/* <img src="/Outside/outside_5.jpg" /> */}
           <img src="/Intro/inside_3.jpg" />
         </S.ImageContainer>
         <S.DescriptionContaier>
