@@ -1,14 +1,26 @@
 import constant_intro from "@/constants/intro.json";
 import * as S from "./style";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import IntroHeader from "../IntroHeader";
 
 const VeganDescription = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/Intro/inside_3.jpg";
+    img.onload = () => setImageLoaded(true);
+  }, []);
   return (
     <>
       <S.Container>
         <S.ImageContainer>
-          <img src="/Intro/inside_3.jpg" />
+          <S.HighQualityImage
+            src="/Intro/inside_3.jpg"
+            $loaded={imageLoaded}
+            style={{ display: imageLoaded ? "block" : "none" }}
+          />
+          <S.PlaceholderImage src="/Intro/inside_3.jpg" $loaded={imageLoaded} />
         </S.ImageContainer>
         <S.DescriptionContaier>
           <IntroHeader headerText="비건이란?" />

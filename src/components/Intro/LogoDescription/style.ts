@@ -98,3 +98,8 @@ export const ImageContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const PlaceholderImage = styled.img<{ $loaded: boolean }>`
+  filter: blur(10px);
+  opacity: ${({ $loaded }) => ($loaded ? 0 : 1)};
+`;

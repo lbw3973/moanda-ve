@@ -87,3 +87,14 @@ export const ImageContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const HighQualityImage = styled.img<{ $loaded: boolean }>`
+  width: 100%;
+  opacity: ${({ $loaded }) => ($loaded ? 1 : 0)};
+`;
+
+export const PlaceholderImage = styled.img<{ $loaded: boolean }>`
+  width: 100%;
+  filter: blur(10px);
+  opacity: ${({ $loaded }) => ($loaded ? 0 : 1)};
+`;
