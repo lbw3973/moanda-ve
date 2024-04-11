@@ -12,7 +12,8 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
       <S.swiper
         modules={props.modules}
         effect="fade"
-        slidesPerView={1}
+        slidesPerView={props.slideperView}
+        loop={props.loop}
         spaceBetween={props.spaceBetween}
         scrollbar={{ draggable: true }}
         navigation
