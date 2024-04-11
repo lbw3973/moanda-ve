@@ -2,14 +2,14 @@ import * as S from "./style";
 import GiftItems from "@/constants/GiftData.json";
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
 import { Navigation, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
-import IntroHeader from "@/components/Intro/IntroHeader";
 
 const GiftItemList = () => {
-  const [swiperView, setSwiperView] = useState(0);
+  const [swiperView, setSwiperView] = useState(1);
   const containerRef = useRef<HTMLInputElement>(null);
   const itemRefs = useRef<HTMLDivElement[]>([]);
 
@@ -110,6 +110,13 @@ const GiftItemList = () => {
               </div>
             ))}
           </S.GiftItemImg>
+          <div>
+            {item.components[0].info.map((data, index) => (
+              <div key={index}>
+                <p>* {data}</p>
+              </div>
+            ))}
+          </div>
         </S.GiftItem>
       ))}
     </S.GiftItems>
