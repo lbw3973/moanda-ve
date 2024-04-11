@@ -6,6 +6,7 @@ export const Container = styled.div`
   height: calc(100vh - 80px);
   width: 100%;
   text-align: center;
+  overflow: hidden;
 `;
 
 export const ContentWrapper = styled.div`
@@ -15,16 +16,17 @@ export const ContentWrapper = styled.div`
   position: relative;
   padding: 0 60px;
   margin: 0 auto;
+  overflow: hidden;
 
   h2 {
     position: absolute;
     top: 5%;
-    font-family: "Catamaran";
+    font-family: "TTLaundryGothicB";
     letter-spacing: 2px;
     font-size: 80px;
     font-weight: 600;
     line-height: 1.2;
-    z-index: 100;
+    z-index: 10;
     text-align: left;
 
     span {
@@ -47,13 +49,30 @@ export const SwiperWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-20%, -50%);
   height: 80%;
+  width: 100%;
 
   overflow: hidden;
 
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
+  }
+
+  .swiper {
+    overflow: visible;
+    .swiper-wrapper {
+      align-items: end;
+      overflow: hidden;
+      .swiper-slide {
+        width: 210px !important;
+        height: 50%;
+      }
+      .swiper-slide-active {
+        width: 520px !important;
+        height: 100%;
+      }
+    }
   }
 `;
