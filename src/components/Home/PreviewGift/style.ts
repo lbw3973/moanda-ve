@@ -2,40 +2,34 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  height: calc(100vh - 80px);
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
+  height: 100%;
 `;
 
-export const GiftHeader = styled.h2`
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  font-family: "TTLaundryGothicB";
-  letter-spacing: 2px;
-  font-size: 80px;
-  font-weight: 600;
-  line-height: 1.2;
-  z-index: 10;
-  text-align: left;
+export const ContentWrapper = styled.div`
+  h2 {
+    position: absolute;
+    top: 5%;
+    font-family: "Catamaran";
+    letter-spacing: 2px;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1.2;
+    z-index: 100;
+    text-align: left;
 
-  @media ${({ theme }) => theme.windowSize.txlarge} {
-    left: 40%;
-  }
+    span {
+      display: block;
+      padding-left: 120px;
 
-  @media ${({ theme }) => theme.windowSize.xlarge} {
-    left: 30%;
-  }
-
-  @media ${({ theme }) => theme.windowSize.large} {
-    left: 20%;
-  }
-
-  span {
-    display: block;
-    padding-left: 120px;
-    white-space: nowrap;
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        margin-left: 16px;
+      }
+    }
   }
 `;
 
@@ -48,20 +42,26 @@ export const SwiperContainer = styled.div`
 `;
 
 export const SwiperWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  height: 80%;
   width: 100%;
-
-  max-width: 1360px;
+  height: 1000px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
+  position: relative;
+  .swiper {
+    position: absolute;
+    left: -500px;
+    width: 100%;
+    height: 500px;
+    .swiper-wrapper {
+      .swiper-slide {
+      }
+      .swiper-slide-active {
+        img {
+          width: 400px;
+        }
+      }
+    }
   }
 
   .swiper {
