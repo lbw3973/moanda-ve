@@ -9,6 +9,7 @@ export const Container = styled.div<{ $isHovered: boolean }>`
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.01);
   box-sizing: border-box;
+  border-radius: 12px;
 
   video,
   img {

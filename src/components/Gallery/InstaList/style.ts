@@ -26,7 +26,7 @@ export const SeeMoreContainer = styled.button`
   color: ${({ theme }) => theme.color.primary_light};
   padding: 16px 30px 16px 40px;
   font-family: "NanumSquareNeo";
-  font-size: 24px;
+  font-size: 22px;
   border-radius: 24px;
 
   display: flex;
