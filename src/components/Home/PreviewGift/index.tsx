@@ -11,7 +11,7 @@ const swiperProps: ISwiperProps = {
   height: "100%",
   width: "100%",
   pagination: false,
-  spaceBetween: 0,
+  spaceBetween: 120,
   useNavigation: false,
   slideperView: 4,
   loop: true,
