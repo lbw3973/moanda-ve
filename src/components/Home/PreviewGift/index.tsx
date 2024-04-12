@@ -1,33 +1,42 @@
 import Swiper from "@/components/Common/Swiper";
 import * as S from "./style";
-import { mainImageList_DeskTop_Gift } from "@/constants/importImage";
 import { ISwiperProps } from "@/types/swiper";
+import IntroGiftItem from "@/constants/IntroGift.json";
 
 const swiperProps: ISwiperProps = {
-  imageList: mainImageList_DeskTop_Gift,
+  imageList: Object.entries(IntroGiftItem).map(([, value]) => {
+    return value;
+  }),
   modules: [],
   height: "100%",
   width: "100%",
   pagination: false,
-  spaceBetween: 200,
+  spaceBetween: 0,
   useNavigation: false,
   slideperView: 4,
   loop: true,
+  useTouchSlide: true,
 };
+
+const test = Object.entries(IntroGiftItem).map(([, value]) => {
+  return value;
+});
+console.log(test);
 
 const PreviewGift = () => {
   return (
     <S.Container>
-      <S.ContentWrapper>
-        <h2>
-          Moanda've
-          <br />
-          <span>Gift Ideas</span>
-        </h2>
-      </S.ContentWrapper>
-      <S.SwiperWrapper>
-        <Swiper props={swiperProps} />
-      </S.SwiperWrapper>
+      <S.GiftHeader>
+        Moanda've
+        <br />
+        <span>Gift Ideas</span>
+      </S.GiftHeader>
+      <S.SwiperContainer>
+        <S.SwiperWrapper>
+          <Swiper props={swiperProps} />
+        </S.SwiperWrapper>
+        <S.SwiperPagination></S.SwiperPagination>
+      </S.SwiperContainer>
     </S.Container>
   );
 };

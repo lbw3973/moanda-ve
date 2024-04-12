@@ -12,6 +12,7 @@ interface ISwiperProps {
   loop: boolean;
   pagination: boolean;
   useNavigation: boolean;
+  useTouchSlide: boolean;
 }
 
 export type { ISwiperProps };

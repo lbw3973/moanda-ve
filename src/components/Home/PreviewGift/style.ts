@@ -2,58 +2,63 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  top: 0;
   height: calc(100vh - 80px);
   width: 100%;
   text-align: center;
   overflow: hidden;
 `;
 
-export const ContentWrapper = styled.div`
-  height: 100%;
-  max-width: 1280px;
+export const GiftHeader = styled.h2`
+  position: absolute;
+  top: 8%;
+  right: 35%;
+  font-family: "TTLaundryGothicB";
+  letter-spacing: 2px;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.2;
+  z-index: 10;
+  text-align: left;
 
-  position: relative;
-  padding: 0 60px;
-  margin: 0 auto;
-  overflow: hidden;
+  @media ${({ theme }) => theme.windowSize.txlarge} {
+    right: 20%;
+  }
 
-  h2 {
-    position: absolute;
-    top: 5%;
-    font-family: "TTLaundryGothicB";
-    letter-spacing: 2px;
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 1.2;
-    z-index: 10;
-    text-align: left;
+  @media ${({ theme }) => theme.windowSize.xlarge} {
+    right: 10%;
+  }
 
-    span {
-      display: block;
-      padding-left: 120px;
+  span {
+    display: block;
+    padding-left: 120px;
 
-      &::after {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: red;
-        margin-left: 16px;
-      }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      margin-left: 16px;
     }
   }
+`;
+
+export const SwiperContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  position: relative;
+  height: 80%;
+  margin-top: 120px;
 `;
 
 export const SwiperWrapper = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-20%, -50%);
+  /* left: 5%; */
+
+  transform: translateY(-50%);
   height: 80%;
   width: 100%;
-
-  overflow: hidden;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -61,10 +66,9 @@ export const SwiperWrapper = styled.div`
   }
 
   .swiper {
-    overflow: visible;
     .swiper-wrapper {
       align-items: end;
-      overflow: hidden;
+      margin-left: 100px;
       .swiper-slide {
         width: 210px !important;
         height: 50%;
@@ -75,4 +79,14 @@ export const SwiperWrapper = styled.div`
       }
     }
   }
+`;
+
+export const SwiperPagination = styled.div`
+  position: absolute;
+  bottom: 40px;
+  left: 160px;
+
+  width: 400px;
+  height: 60px;
+  background-color: black;
 `;

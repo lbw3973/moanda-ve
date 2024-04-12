@@ -17,6 +17,7 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
         spaceBetween={props.spaceBetween}
         scrollbar={{ draggable: true }}
         navigation
+        touchRatio={Number(props.useTouchSlide)}
         pagination={{ clickable: props.pagination }}
         autoplay={{
           delay: 4000,
