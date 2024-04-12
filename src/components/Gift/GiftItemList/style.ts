@@ -192,3 +192,16 @@ export const GiftItemImg = styled.div`
     font-size: 20px;
   }
 `;
+
+export const GiftItemInfo = styled.div`
+  width: 100%;
+  margin-bottom: 20px;
+  line-height: 20px;
+
+  div {
+    p {
+      font-size: 13px;
+      color: #b1825e;
+    }
+  }
+`;

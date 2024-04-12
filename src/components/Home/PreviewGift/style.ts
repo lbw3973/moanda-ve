@@ -51,7 +51,7 @@ export const SwiperWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-
+  max-height: 550px;
   transform: translate(-50%, -50%);
   height: 80%;
   width: 100%;
@@ -68,6 +68,7 @@ export const SwiperWrapper = styled.div`
     .swiper-wrapper {
       align-items: end;
       margin-left: 92px;
+
       .swiper-slide {
         width: 215px !important;
         height: 50%;
@@ -75,6 +76,8 @@ export const SwiperWrapper = styled.div`
         justify-content: center;
         img {
           border-radius: 12px;
+          width: 100%;
+          height: 100%;
         }
       }
       .swiper-slide-active {
