@@ -106,6 +106,22 @@ export const GiftItemBoxImg = styled.div`
     @media ${({ theme }) => theme.windowSize.small} {
       max-width: 300px;
     }
+
+    .swiper-pagination {
+      bottom: 45px;
+
+      .swiper-pagination-bullet {
+        border-radius: 0;
+        height: 1px;
+        vertical-align: middle;
+        transition-duration: 300ms;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: ${({ theme }) => theme.color.primary_normal};
+        height: 8px;
+        border-radius: 25px;
+      }
+    }
   }
   .swiperSlide {
     height: 335px;

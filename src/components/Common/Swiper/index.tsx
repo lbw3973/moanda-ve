@@ -12,13 +12,15 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
       <S.swiper
         modules={props.modules}
         effect="fade"
-        slidesPerView={1}
+        slidesPerView={props.slideperView}
+        loop={props.loop}
         spaceBetween={props.spaceBetween}
         scrollbar={{ draggable: true }}
         navigation
+        touchRatio={Number(props.useTouchSlide)}
         pagination={{ clickable: props.pagination }}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
