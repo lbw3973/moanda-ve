@@ -55,6 +55,7 @@ export const SwiperWrapper = styled.div`
   transform: translate(-50%, -50%);
   height: 80%;
   width: 100%;
+  max-height: 550px;
 
   max-width: 1360px;
   overflow: hidden;

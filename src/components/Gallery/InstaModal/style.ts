@@ -53,7 +53,7 @@ export const Wrapper = styled.div<{ $scale: number }>`
   .media {
     width: 600px;
     max-height: 800px;
-    background-color: ${({ theme }) => theme.color.primary_light};
+    background-color: ${({ theme }) => theme.color.primary_normal};
     position: relative;
     video,
     img {
