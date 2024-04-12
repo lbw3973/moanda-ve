@@ -18,7 +18,7 @@ const LogoDescription = () => {
           </S.InformWrapper>
         </S.DescriptionContaier>
         <S.ImageContainer>
-          <img src="/Outside/outside_7_1.jpg" />
+          <img src="/Intro/outside_7_1.jpg" />
         </S.ImageContainer>
       </S.Container>
     </>
