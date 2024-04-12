@@ -20,7 +20,7 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
         touchRatio={Number(props.useTouchSlide)}
         pagination={{ clickable: props.pagination }}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
