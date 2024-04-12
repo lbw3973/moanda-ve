@@ -69,7 +69,7 @@ export const ImageContainer = styled.div`
   height: 30%;
   min-width: 370px;
   max-width: 650px;
-  filter: brightness(1.1);
+  filter: brightness(1.1) saturate(1.4);
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
     width: 50%;

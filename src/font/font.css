@@ -39,3 +39,17 @@
   font-weight: 600;
   src: url("./Catamaran.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: 'TTLaundryGothicB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Adultkid";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Adultkid.ttf") format("truetype");
+}

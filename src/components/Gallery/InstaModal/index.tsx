@@ -87,6 +87,9 @@ const InstaModal = ({ data, closeModal }: { data: IResInstagram; closeModal: () 
                 useNavigation: true,
                 modules: [Navigation],
                 spaceBetween: 0,
+                loop: false,
+                slideperView: 1,
+                useTouchSlide: true,
               }}
             />
           )}

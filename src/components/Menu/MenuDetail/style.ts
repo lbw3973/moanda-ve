@@ -60,6 +60,7 @@ export const MenuImage = styled.img`
   border-radius: 50%;
   width: 160px;
   height: 160px;
+  object-fit: cover;
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
     width: 160px;
