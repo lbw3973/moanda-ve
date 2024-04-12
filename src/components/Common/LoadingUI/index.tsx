@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("/loading.gif");
+  background-image: url("/Logo/loading.gif");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

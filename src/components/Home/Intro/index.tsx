@@ -28,7 +28,7 @@ const Intro = () => {
           <S.FirstSlide>
             <S.FirstSlideImg>
               <div>
-                <img src="/Intro/intro-logo.png" alt="logo" className="logo" />
+                <img src="/Main/intro-logo.png" alt="logo" className="logo" />
                 <S.FirstSlideText>
                   <h1>비건디저트</h1>
                   <p>최고급 식물성 재료만을 사용하여 정성스럽게 만든 다양한 비건 디저트를 선보입니다.</p>
@@ -37,7 +37,7 @@ const Intro = () => {
                 </S.FirstSlideText>
               </div>
               <div className="flex">
-                <img src="/Intro/intro-img.png" alt="img" className="postitImg" />
+                <img src="/Main/intro-img.png" alt="img" className="postitImg" />
               </div>
             </S.FirstSlideImg>
           </S.FirstSlide>
