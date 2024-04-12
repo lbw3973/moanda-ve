@@ -110,6 +110,13 @@ const GiftItemList = () => {
               </div>
             ))}
           </S.GiftItemImg>
+          <div>
+            {item.components[0].info.map((data, index) => (
+              <div key={index}>
+                <p>* {data}</p>
+              </div>
+            ))}
+          </div>
         </S.GiftItem>
       ))}
     </S.GiftItems>

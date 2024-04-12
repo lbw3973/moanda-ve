@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <section style={{ position: "relative" }}>
       <Intro />
-      {/* <NewProduct /> */}
       <PreviewGift />
       <PreviewInsta />
     </section>
