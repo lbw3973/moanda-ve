@@ -2,16 +2,18 @@ import Swiper from "@/components/Common/Swiper";
 import * as S from "./style";
 import { ISwiperProps } from "@/types/swiper";
 import IntroGiftItem from "@/constants/IntroGift.json";
+import { Autoplay } from "swiper/modules";
+import { FaHeart } from "react-icons/fa";
 
 const swiperProps: ISwiperProps = {
   imageList: Object.entries(IntroGiftItem).map(([, value]) => {
     return value;
   }),
-  modules: [],
+  modules: [Autoplay],
   height: "100%",
   width: "100%",
   pagination: false,
-  spaceBetween: 120,
+  spaceBetween: 80,
   useNavigation: false,
   slideperView: 4,
   loop: true,
@@ -29,13 +31,14 @@ const PreviewGift = () => {
       <S.GiftHeader>
         Moanda've
         <br />
-        <span>Gift Ideas</span>
+        <span>
+          Gift Ideas <FaHeart color="red" size={30} />
+        </span>
       </S.GiftHeader>
       <S.SwiperContainer>
         <S.SwiperWrapper>
           <Swiper props={swiperProps} />
         </S.SwiperWrapper>
-        <S.SwiperPagination></S.SwiperPagination>
       </S.SwiperContainer>
     </S.Container>
   );

@@ -10,8 +10,8 @@ export const Container = styled.div`
 
 export const GiftHeader = styled.h2`
   position: absolute;
-  top: 8%;
-  right: 35%;
+  top: 10%;
+  left: 50%;
   font-family: "TTLaundryGothicB";
   letter-spacing: 2px;
   font-size: 80px;
@@ -21,25 +21,21 @@ export const GiftHeader = styled.h2`
   text-align: left;
 
   @media ${({ theme }) => theme.windowSize.txlarge} {
-    right: 20%;
+    left: 40%;
   }
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
-    right: 10%;
+    left: 30%;
+  }
+
+  @media ${({ theme }) => theme.windowSize.large} {
+    left: 20%;
   }
 
   span {
     display: block;
     padding-left: 120px;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: red;
-      margin-left: 16px;
-    }
+    white-space: nowrap;
   }
 `;
 
@@ -48,17 +44,20 @@ export const SwiperContainer = styled.div`
   width: 100%;
   position: relative;
   height: 80%;
-  margin-top: 120px;
+  margin-top: 80px;
 `;
 
 export const SwiperWrapper = styled.div`
   position: absolute;
   top: 50%;
-  /* left: 5%; */
+  left: 50%;
 
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   height: 80%;
   width: 100%;
+
+  max-width: 1360px;
+  overflow: hidden;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -68,14 +67,24 @@ export const SwiperWrapper = styled.div`
   .swiper {
     .swiper-wrapper {
       align-items: end;
-      margin-left: 100px;
+      margin-left: 92px;
       .swiper-slide {
-        width: 210px !important;
+        width: 215px !important;
         height: 50%;
+        display: flex;
+        justify-content: center;
+        img {
+          border-radius: 12px;
+        }
       }
       .swiper-slide-active {
-        width: 520px !important;
+        /* margin-left: 6px; */
+        width: 430px !important;
         height: 100%;
+      }
+
+      .swiper-slide-prev {
+        visibility: hidden;
       }
     }
   }
@@ -84,7 +93,7 @@ export const SwiperWrapper = styled.div`
 export const SwiperPagination = styled.div`
   position: absolute;
   bottom: 40px;
-  left: 160px;
+  left: 162px;
 
   width: 400px;
   height: 60px;

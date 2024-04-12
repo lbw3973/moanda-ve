@@ -38,10 +38,7 @@ export const Header = styled.h1`
 export const InstaWrapper = styled.div`
   display: flex;
   max-width: 1000px;
-
-  div {
-    margin: 0 10px;
-  }
+  gap: 20px;
 `;
 
 export const MoreButton = styled(Link)`
