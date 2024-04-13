@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -20,6 +21,12 @@ export const GiftHeader = styled.h2`
   z-index: 10;
   text-align: left;
 
+  span {
+    display: block;
+    padding-left: 120px;
+    white-space: nowrap;
+  }
+
   @media ${({ theme }) => theme.windowSize.txlarge} {
     left: 40%;
   }
@@ -32,10 +39,15 @@ export const GiftHeader = styled.h2`
     left: 20%;
   }
 
-  span {
-    display: block;
-    padding-left: 120px;
-    white-space: nowrap;
+  @media ${({ theme }) => theme.windowSize.medium} {
+    position: static;
+    margin-top: 80px;
+    font-size: 40px;
+    padding: 0 20px;
+
+    span {
+      padding-left: 60px;
+    }
   }
 `;
 
@@ -45,6 +57,10 @@ export const SwiperContainer = styled.div`
   position: relative;
   height: 80%;
   margin-top: 80px;
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    height: 100%;
+  }
 `;
 
 export const SwiperWrapper = styled.div`
@@ -82,7 +98,6 @@ export const SwiperWrapper = styled.div`
         }
       }
       .swiper-slide-active {
-        /* margin-left: 6px; */
         width: 430px !important;
         height: 100%;
       }
@@ -92,14 +107,62 @@ export const SwiperWrapper = styled.div`
       }
     }
   }
+
+  @media ${({ theme }) => theme.windowSize.medium} {
+    position: static;
+    transform: none;
+    max-height: initial;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+
+    .swiper {
+      .swiper-wrapper {
+        margin-left: 0;
+        .swiper-slide {
+          width: 100% !important;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          img {
+            border-radius: 12px;
+            width: 70%;
+            height: 100%;
+          }
+        }
+
+        .swiper-slide-prev {
+          visibility: visible;
+        }
+      }
+    }
+  }
 `;
 
-export const SwiperPagination = styled.div`
+export const SwiperPagination = styled(Link)`
   position: absolute;
-  bottom: 40px;
-  left: 162px;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
 
-  width: 400px;
-  height: 60px;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  font-family: "NanumSquareNeo";
+  font-size: 20px;
+  white-space: nowrap;
+  color: ${({ theme }) => theme.color.primary_light};
+  padding: 20px 60px;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.color.primary_normal};
+
+  @media ${({ theme }) => theme.windowSize.xlarge} {
+    left: 60%;
+  }
+
+  @media ${({ theme }) => theme.windowSize.large} {
+    left: 70%;
+  }
 `;

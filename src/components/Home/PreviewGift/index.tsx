@@ -4,12 +4,14 @@ import { ISwiperProps } from "@/types/swiper";
 import IntroGiftItem from "@/constants/IntroGift.json";
 import { Autoplay } from "swiper/modules";
 import { FaHeart } from "react-icons/fa";
+import { IoArrowForward } from "react-icons/io5";
+import { useScreenSizeStore } from "@/stores/screenSizeStore";
 
 const swiperProps: ISwiperProps = {
   imageList: Object.entries(IntroGiftItem).map(([, value]) => {
     return value;
   }),
-  modules: [Autoplay],
+  modules: [],
   height: "100%",
   width: "100%",
   pagination: false,
@@ -20,12 +22,9 @@ const swiperProps: ISwiperProps = {
   useTouchSlide: true,
 };
 
-const test = Object.entries(IntroGiftItem).map(([, value]) => {
-  return value;
-});
-console.log(test);
-
 const PreviewGift = () => {
+  const { isMobileView } = useScreenSizeStore();
+
   return (
     <S.Container>
       <S.GiftHeader>
@@ -34,10 +33,14 @@ const PreviewGift = () => {
         <span>
           Gift Ideas <FaHeart color="red" size={30} />
         </span>
+        <S.SwiperPagination to="/gift">
+          답례품 보러가기
+          <IoArrowForward size={25} />
+        </S.SwiperPagination>
       </S.GiftHeader>
       <S.SwiperContainer>
         <S.SwiperWrapper>
-          <Swiper props={swiperProps} />
+          <Swiper props={{ ...swiperProps, slideperView: isMobileView ? 1 : 4, spaceBetween: isMobileView ? 0 : 80 }} />
         </S.SwiperWrapper>
       </S.SwiperContainer>
     </S.Container>
