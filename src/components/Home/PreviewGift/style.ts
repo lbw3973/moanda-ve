@@ -188,7 +188,7 @@ export const SwiperWrapper = styled.div`
             transform: none;
             border-radius: 12px;
             margin: 0 20px;
-            width: 100%;
+            width: 90%;
             max-width: 450px;
             max-height: 600px;
             height: 100%;
