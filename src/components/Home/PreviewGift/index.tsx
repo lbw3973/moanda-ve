@@ -24,7 +24,6 @@ const swiperProps: ISwiperProps = {
 const PreviewGift = () => {
   const { isMobileView } = useScreenSizeStore();
   const { currentIndex } = useSwiperCurrentIndexStore();
-  console.log(currentIndex);
 
   return (
     <S.Container>
@@ -43,7 +42,10 @@ const PreviewGift = () => {
         <S.SwiperWrapper>
           <Swiper props={{ ...swiperProps, slideperView: isMobileView ? 1 : 4, spaceBetween: isMobileView ? 0 : 80 }} />
         </S.SwiperWrapper>
-        <S.SwiperPagination to="gift">{Object.keys(IntroGiftItem)[currentIndex]}</S.SwiperPagination>
+        <S.SwiperPagination to="gift">
+          {Object.keys(IntroGiftItem)[currentIndex]}
+          <IoArrowForward size={25} />
+        </S.SwiperPagination>
       </S.SwiperContainer>
     </S.Container>
   );

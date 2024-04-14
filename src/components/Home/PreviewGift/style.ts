@@ -228,4 +228,12 @@ export const SwiperPagination = styled(Link)`
   @media ${({ theme }) => theme.windowSize.small} {
     max-width: 300px;
   }
+
+  svg {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
 `;
