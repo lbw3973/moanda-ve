@@ -11,8 +11,8 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
   const { setCurrentIndex } = useSwiperCurrentIndexStore();
 
   const handleSlideChange = (e: SwiperType) => {
-    setIsBlackIndex(e.activeIndex + 1);
-    setCurrentIndex(e.activeIndex);
+    setIsBlackIndex(e.realIndex + 1);
+    setCurrentIndex(e.realIndex);
   };
 
   return (
