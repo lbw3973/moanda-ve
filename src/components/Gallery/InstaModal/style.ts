@@ -178,7 +178,7 @@ export const Wrapper = styled.div<{ $scale: number }>`
 
     .media {
       width: 100%;
-      background-color: ${({ theme }) => theme.color.primary_light};
+      background-color: ${({ theme }) => theme.color.primary_normal};
       video,
       img {
         position: initial;

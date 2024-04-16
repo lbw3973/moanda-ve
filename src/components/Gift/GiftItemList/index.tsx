@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
+import { IoCall } from "react-icons/io5";
+import constant from "@/constants/base.json";
 
 const GiftItemList = () => {
   const [swiperView, setSwiperView] = useState(1);
@@ -74,6 +76,22 @@ const GiftItemList = () => {
   const clickImage = () => {};
   return (
     <S.GiftItems ref={containerRef}>
+      <S.Contact>
+        <div>
+          <a href={`tel:${constant.Contact}`}>
+            <IoCall className="call" />
+          </a>
+          <p>{constant.Contact}</p>
+        </div>
+        <div onClick={() => window.open(constant.Instagram)}>
+          <img src="/Logo/instagram.png" />
+          <p>moanda_ve</p>
+        </div>
+        <div onClick={() => window.open(constant.KakaoChannel)}>
+          <img src="/Logo/kakao.png" />
+          <p>모앤더비</p>
+        </div>
+      </S.Contact>
       <S.GiftLine></S.GiftLine>
       {Object.entries(GiftItems).map(([title, item], index) => (
         <S.GiftItem key={index} ref={addItemRef} className="observer">
@@ -110,13 +128,6 @@ const GiftItemList = () => {
               </div>
             ))}
           </S.GiftItemImg>
-          <S.GiftItemInfo>
-            {item.components[0].info.map((data, index) => (
-              <div key={index}>
-                <p>* {data}</p>
-              </div>
-            ))}
-          </S.GiftItemInfo>
         </S.GiftItem>
       ))}
     </S.GiftItems>
