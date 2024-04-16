@@ -3,9 +3,17 @@ import "swiper/css/effect-fade";
 import * as S from "./style";
 import { ISwiperProps } from "@/types/swiper";
 import { useState } from "react";
+import { useSwiperCurrentIndexStore } from "@/stores/swiperCurrentIndexStore";
+import { Swiper as SwiperType } from "swiper";
 
 const Swiper = ({ props }: { props: ISwiperProps }) => {
   const [isBlackIndex, setIsBlackIndex] = useState(1);
+  const { setCurrentIndex } = useSwiperCurrentIndexStore();
+
+  const handleSlideChange = (e: SwiperType) => {
+    setIsBlackIndex(e.realIndex + 1);
+    setCurrentIndex(e.realIndex);
+  };
 
   return (
     <>
@@ -23,7 +31,7 @@ const Swiper = ({ props }: { props: ISwiperProps }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
+        onSlideChange={handleSlideChange}
         $width={props.width}
         $height={props.height}
         $isBlack={props.isBlack ? props.isBlack[isBlackIndex - 1] : false}

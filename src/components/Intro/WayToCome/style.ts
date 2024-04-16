@@ -39,6 +39,7 @@ export const InformContainer = styled.div`
     }
     img {
       width: 200px;
+      cursor: pointer;
     }
   }
   .contact {
