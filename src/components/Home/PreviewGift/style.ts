@@ -15,11 +15,12 @@ export const Container = styled.div`
 
 export const GiftHeader = styled.h2`
   position: absolute;
-  top: 10%;
-  left: 50%;
+  top: 0;
+  right: 0;
   font-family: "TTLaundryGothicB";
   letter-spacing: 2px;
-  font-size: 80px;
+  /* font-size: 80px; */
+  font-size: 100px;
   font-weight: 600;
   line-height: 1.2;
   z-index: 10;
@@ -31,16 +32,12 @@ export const GiftHeader = styled.h2`
     white-space: nowrap;
   }
 
-  @media ${({ theme }) => theme.windowSize.txlarge} {
-    left: 40%;
-  }
-
   @media ${({ theme }) => theme.windowSize.xlarge} {
-    left: 30%;
+    font-size: 90px;
   }
 
   @media ${({ theme }) => theme.windowSize.large} {
-    left: 20%;
+    font-size: 80px;
   }
 
   @media ${({ theme }) => theme.windowSize.medium} {
@@ -57,29 +54,27 @@ export const GiftHeader = styled.h2`
 
 export const LinkToGift = styled(Link)`
   position: absolute;
-  bottom: -70px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -90px;
+  right: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 
   font-family: "NanumSquareNeo";
   font-size: 20px;
   white-space: nowrap;
   color: ${({ theme }) => theme.color.primary_light};
-  padding: 20px 60px;
+  padding: 20px 30px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.color.primary_normal};
 
   @media ${({ theme }) => theme.windowSize.xlarge} {
-    left: 60%;
+    right: 5%;
   }
 
   @media ${({ theme }) => theme.windowSize.large} {
-    left: 70%;
+    right: 5%;
   }
 
   @media ${({ theme }) => theme.windowSize.medium} {
@@ -110,7 +105,6 @@ export const SwiperWrapper = styled.div`
   max-height: 550px;
 
   max-width: 1360px;
-  overflow: hidden;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -143,7 +137,7 @@ export const SwiperWrapper = styled.div`
       }
 
       .swiper-slide-prev {
-        visibility: hidden;
+        /* visibility: hidden; */
       }
     }
   }
@@ -158,6 +152,7 @@ export const SwiperWrapper = styled.div`
 
     .swiper {
       height: auto;
+      margin-top: 20px;
       .swiper-pagination {
         display: block;
         bottom: 40px;
