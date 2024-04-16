@@ -14,7 +14,6 @@ const fadeIn = keyframes`
 export const GiftItems = styled.div`
   max-width: 100%;
   width: 100%;
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,6 +38,64 @@ export const GiftItems = styled.div`
       animation: ${fadeIn} 1.5s ease-out forwards;
     }
     opacity: 0;
+  }
+`;
+
+export const Contact = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px;
+  @media ${({ theme }) => theme.windowSize.medium} {
+    flex-direction: column;
+    gap: 10px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @media ${({ theme }) => theme.windowSize.medium} {
+      font-size: 12px;
+    }
+    p {
+      line-height: 50px;
+      padding-left: 10px;
+    }
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    @media ${({ theme }) => theme.windowSize.medium} {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  a {
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    svg {
+      width: 30px;
+      height: 30px;
+      @media ${({ theme }) => theme.windowSize.medium} {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @media ${({ theme }) => theme.windowSize.medium} {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .call {
+    color: #7e7;
   }
 `;
 
