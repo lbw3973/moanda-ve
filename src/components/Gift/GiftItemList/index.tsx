@@ -128,6 +128,13 @@ const GiftItemList = () => {
               </div>
             ))}
           </S.GiftItemImg>
+          <S.GiftItemInfo>
+            {item.info.map((data, index) => (
+              <div key={index}>
+                <p>* {data}</p>
+              </div>
+            ))}
+          </S.GiftItemInfo>
         </S.GiftItem>
       ))}
     </S.GiftItems>
