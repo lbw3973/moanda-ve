@@ -34,6 +34,15 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
     };
   }, []);
 
+  const isWholeCake = () => {
+    return item?.src.includes("/wholeCake/");
+  };
+
+  const handleClickButton = () => {
+    const url = isWholeCake() ? constant.KakaoChannel : constant.NaverStoreProduct;
+    window.open(url);
+  };
+
   return (
     <S.MenuModalSection $isOpen={isOpen}>
       <S.MenuModalContainer $isOpen={isOpen}>
@@ -73,13 +82,13 @@ const MenuModal: React.FC<IMenuModalProps> = ({ openState, onClose, item }) => {
         </S.MenuModalDesTitle>
         <span className="how">{item?.how}</span>
         <S.MenuModalWarning>*{item?.warning}</S.MenuModalWarning>
-        <S.MenuModalNaver onClick={() => window.open(constant.NaverStoreProduct)}>
-          <img src="/Logo/naver.jpg" alt="" />
+        <S.MenuModalButton onClick={handleClickButton}>
+          <img src={`${isWholeCake() ? "/Logo/kakao.png" : "/Logo/naver.jpg"}`} alt="" />
           <div>
             <h1>모앤더비</h1>
-            <h1>스마트 스토어에서 구매가능합니다.</h1>
+            <h1>{isWholeCake() ? "카카오톡 채널로 문의해주세요." : "스마트 스토어에서 구매가능합니다."}</h1>
           </div>
-        </S.MenuModalNaver>
+        </S.MenuModalButton>
       </S.MenuModalContainer>
     </S.MenuModalSection>
   );
