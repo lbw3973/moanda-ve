@@ -27,19 +27,19 @@ const PreviewGift = () => {
 
   return (
     <S.Container>
-      <S.GiftHeader>
-        Moanda've
-        <br />
-        <span>
-          Gift Ideas <FaHeart color="red" size={30} />
-        </span>
-        <S.LinkToGift to="/gift">
-          답례품 보러가기
-          <IoArrowForward size={25} />
-        </S.LinkToGift>
-      </S.GiftHeader>
       <S.SwiperContainer>
         <S.SwiperWrapper>
+          <S.GiftHeader>
+            Moanda've
+            <br />
+            <span>
+              Gift Ideas <FaHeart color="red" size={30} />
+            </span>
+            <S.LinkToGift to="/gift">
+              답례품 보러가기
+              <IoArrowForward size={25} />
+            </S.LinkToGift>
+          </S.GiftHeader>
           <Swiper props={{ ...swiperProps, slideperView: isMobileView ? 1 : 4, spaceBetween: isMobileView ? 0 : 80 }} />
         </S.SwiperWrapper>
         <S.SwiperPagination to="gift">

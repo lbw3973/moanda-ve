@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
+import { Autoplay } from "swiper/modules";
 
 // const swiperProps: ISwiperProps = {
 //   imageList: mainImageList_DeskTop,
@@ -23,7 +24,7 @@ const Intro = () => {
 
   return (
     <S.Container>
-      <Swiper autoHeight={true} onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}>
+      <Swiper modules={[Autoplay]} autoHeight={true} onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}>
         <SwiperSlide>
           <S.FirstSlide>
             <S.FirstSlideImg>
