@@ -74,13 +74,17 @@ export const Contact = styled.div`
     }
   }
 
-  a {
+  button {
     border-radius: 50%;
     padding: 10px;
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-color: #fff;
+    @media ${({ theme }) => theme.windowSize.medium} {
+      width: 40px;
+      height: 40px;
+    }
     svg {
       width: 30px;
       height: 30px;
@@ -88,10 +92,6 @@ export const Contact = styled.div`
         width: 20px;
         height: 20px;
       }
-    }
-    @media ${({ theme }) => theme.windowSize.medium} {
-      width: 15px;
-      height: 15px;
     }
   }
   .call {

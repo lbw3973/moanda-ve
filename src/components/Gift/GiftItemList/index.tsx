@@ -77,12 +77,14 @@ const GiftItemList = () => {
   return (
     <S.GiftItems ref={containerRef}>
       <S.Contact>
-        <div>
-          <a href={`tel:${constant.Contact}`}>
-            <IoCall className="call" />
-          </a>
-          <p>{constant.Contact}</p>
-        </div>
+        <a href={`tel:${constant.Contact}`}>
+          <div>
+            <button>
+              <IoCall className="call" />
+            </button>
+            <p>{constant.Contact}</p>
+          </div>
+        </a>
         <div onClick={() => window.open(constant.Instagram)}>
           <img src="/Logo/instagram.png" />
           <p>moanda_ve</p>
