@@ -10,7 +10,6 @@ export const GiftContainer = styled.div`
 
   .poster {
     max-width: 100%;
-    width: 70%;
     @media ${({ theme }) => theme.windowSize.medium} {
       max-width: 100%;
     }
