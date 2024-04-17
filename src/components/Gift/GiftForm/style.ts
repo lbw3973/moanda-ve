@@ -9,8 +9,8 @@ export const GiftContainer = styled.div`
   align-items: center;
 
   .poster {
-    /* max-width: 100%; */
-    width: 100%;
+    max-width: 100%;
+    width: 70%;
     @media ${({ theme }) => theme.windowSize.medium} {
       max-width: 100%;
     }
