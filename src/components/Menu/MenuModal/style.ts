@@ -177,7 +177,7 @@ export const MenuModalIngredient = styled.h3`
   color: gray;
 `;
 
-export const MenuModalNaver = styled.div`
+export const MenuModalButton = styled.div`
   width: 100%;
   height: 50px;
   display: flex;

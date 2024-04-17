@@ -70,7 +70,7 @@ const GiftItemList = () => {
   const getBoxImgName = (paths: string) => {
     const parts = paths.split("/");
     const fileName = parts[parts.length - 1];
-    return fileName.split(".")[0];
+    return fileName.split(".")[0].trim();
   };
 
   const clickImage = () => {};

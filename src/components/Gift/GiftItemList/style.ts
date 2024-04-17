@@ -195,6 +195,7 @@ export const GiftItemBoxImg = styled.div`
   img {
     max-width: 100%;
     height: auto;
+    object-fit: cover;
   }
 `;
 
@@ -207,7 +208,6 @@ export const GiftItemImg = styled.div`
     flex-direction: column;
   }
   div {
-    /* border: 2px solid #b1825e; */
     border-radius: 10px;
     width: 100%;
     padding: 10px;
@@ -218,6 +218,8 @@ export const GiftItemImg = styled.div`
       height: 300px;
       border-radius: 10px;
       border: 2px solid #b1825e;
+
+      object-fit: cover;
     }
 
     div {

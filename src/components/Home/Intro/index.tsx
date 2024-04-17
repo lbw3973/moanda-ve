@@ -24,7 +24,13 @@ const Intro = () => {
 
   return (
     <S.Container>
-      <Swiper modules={[Autoplay]} autoHeight={true} onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}>
+      <Swiper
+        modules={[Autoplay]}
+        autoHeight={true}
+        onSlideChange={e => setIsBlackIndex(e.activeIndex + 1)}
+        autoplay={{ delay: 5000 }}
+        loop
+      >
         <SwiperSlide>
           <S.FirstSlide>
             <S.FirstSlideImg>
