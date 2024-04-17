@@ -122,6 +122,7 @@ const GiftItemList = () => {
                 <p>* {data}</p>
               </div>
             ))}
+            <p>* 모든 이미지는 참고용입니다.</p>
           </S.GiftItemInfo>
         </S.GiftItem>
       ))}
