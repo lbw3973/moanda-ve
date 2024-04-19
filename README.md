@@ -48,29 +48,31 @@
 
 
 
+
 |**메인 페이지**|
 | --- |
-|<p align="center"><img src="https://github.com/lbw3973/DISEARCH-FRONT-END/assets/75530371/07db7cdb-4797-4bad-86dc-8cbc0224afad" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"><img src="https://github.com/yong8048/moanda-ve/assets/61074759/5e397cc7-4a2c-4c4e-b85c-70812bd459bd" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
 |<p align="center">모앤더비 홍보포스터를 구현하였습니다.</p>|
 
 |**모앤더비 소개**|
 | --- |
-|<p align="center"><img src="https://github.com/lbw3973/DISEARCH-FRONT-END/assets/75530371/ce54bd63-0f38-41c8-b3d3-3dd880234049" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"><img src="https://github.com/yong8048/moanda-ve/assets/61074759/403fbb89-de4a-497a-b58a-458f4ae62d25" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
 |<p align="center">모앤더비의 소개글과 카카오지도를 활용하여 구현하였습니다.</p>|
+
 
 |**메뉴 소개**|
 | --- |
-|<p align="center"><img src="https://github.com/lbw3973/DISEARCH-FRONT-END/assets/75530371/39389dc0-649d-4f5b-8ab2-37f23ac3e428" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"><img src="https://github.com/yong8048/moanda-ve/assets/61074759/7e9c685d-1ff6-409e-812f-be75d9a6f9f4" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
 |<p align="center">원하는 카테고리와 태그를 클릭하여 검색할 수 있습니다.</p>|
 
 |**답례품**|
 | --- |
-|<p align="center"><img src="https://github.com/lbw3973/DISEARCH-FRONT-END/assets/75530371/12df4bb9-5c71-4579-b966-4eb7700481ed" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"><img src="https://github.com/yong8048/moanda-ve/assets/61074759/0e9ebce8-d1d7-4ea6-bb91-960f29a8ce58" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
 |<p align="center">자신의 서버를 업로드하여 홍보할 수 있습니다.<br/>서버를 업로드하면 해당 서버에 봇이 추가됩니다.</p>|
 
 |**갤러리**|
 | --- |
-|<p align="center"><img src="https://github.com/lbw3973/DISEARCH-FRONT-END/assets/75530371/6f2de05a-b035-4abb-9adc-f5529a6b21d5" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
+|<p align="center"><img src="https://github.com/yong8048/moanda-ve/assets/61074759/1bf1d7c4-fc92-4412-9e64-fe331ca18511" width="750" height="400" style="object-fit: cover; object-position: center;"></p>|
 |<p align="center">업로드한 서버를 확인하고 관리할 수 있습니다.</p>|
 
 
