@@ -42,14 +42,16 @@ const InstaList = () => {
       {isError ? 
         <S.ErrorNotice>점검중입니다.</S.ErrorNotice> 
         : 
-        <S.ListWrapper>
-          {instaPosts && instaPosts.map(item => <InstaItem key={item.id} data={item} />)}
-        </S.ListWrapper>
+        <>
+          <S.ListWrapper>
+            {instaPosts && instaPosts.map(item => <InstaItem key={item.id} data={item} />)}
+          </S.ListWrapper>
+          <S.SeeMoreContainer onClick={handleClickSeeMore}>
+            더보기
+            <IoIosArrowDown />
+          </S.SeeMoreContainer>
+        </>
       }
-      <S.SeeMoreContainer onClick={handleClickSeeMore}>
-        더보기
-        <IoIosArrowDown />
-      </S.SeeMoreContainer>
       {isLoading && <LoadingUI />}
     </S.Container>
   );
