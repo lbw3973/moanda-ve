@@ -60,3 +60,12 @@ export const MoreButton = styled(Link)`
   font-family: "NanumSquareNeo";
   border-radius: 10px;
 `;
+
+export const ErrorNotice = styled.p`
+  text-align: center;
+  font-family: "NanumSquareNeo";
+  color: ${({theme}) => theme.color.secondary_light};
+  font-size: 24px;
+  padding:20px;
+  font-weight: 600;
+`

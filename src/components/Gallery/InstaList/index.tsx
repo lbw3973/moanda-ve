@@ -13,7 +13,7 @@ const InstaList = () => {
   const [nextURL, setNextURL] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const { data: instagram_List, isFetched } = useQuery<IResInstagramList>({
+  const { data: instagram_List, isFetched, isError } = useQuery<IResInstagramList>({
     queryKey: ["Instagram_list"],
     queryFn: () => getInstagramPost(12),
   });
@@ -23,8 +23,10 @@ const InstaList = () => {
       setInstaPosts(instagram_List.data);
       setNextURL(instagram_List.paging.next);
       setIsLoading(false);
+    }else if(isError){
+      setIsLoading(false)
     }
-  }, [isFetched]);
+  }, [isFetched, isError]);
 
   const handleClickSeeMore = async () => {
     setIsLoading(true);
@@ -37,7 +39,13 @@ const InstaList = () => {
   return (
     <S.Container>
       <IntroHeader headerText="모앤더비 인스타그램" />
-      <S.ListWrapper>{instaPosts && instaPosts.map(item => <InstaItem key={item.id} data={item} />)}</S.ListWrapper>
+      {isError ? 
+        <S.ErrorNotice>점검중입니다.</S.ErrorNotice> 
+        : 
+        <S.ListWrapper>
+          {instaPosts && instaPosts.map(item => <InstaItem key={item.id} data={item} />)}
+        </S.ListWrapper>
+      }
       <S.SeeMoreContainer onClick={handleClickSeeMore}>
         더보기
         <IoIosArrowDown />

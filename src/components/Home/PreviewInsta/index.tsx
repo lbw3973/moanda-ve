@@ -6,7 +6,7 @@ import { IResInstagramList } from "@/types/insta";
 import { IoArrowForward } from "react-icons/io5";
 
 const PreviewInsta = () => {
-  const { data: instaItems } = useQuery<IResInstagramList>({
+  const { data: instaItems, isError } = useQuery<IResInstagramList>({
     queryKey: ["previewInsta"],
     queryFn: () => getInstagramPost(3),
   });
@@ -14,9 +14,14 @@ const PreviewInsta = () => {
   return (
     <S.Container>
       <S.Header>인스타그램</S.Header>
-      <S.InstaWrapper>
-        {instaItems && instaItems.data.map((data, index) => <InstaItem data={data} key={index} />)}
-      </S.InstaWrapper>
+      
+      {isError ? 
+        <S.ErrorNotice>점검중입니다.</S.ErrorNotice> 
+        : 
+        <S.InstaWrapper>
+          {instaItems && instaItems.data.map((data, index) => <InstaItem data={data} key={index} />)}
+        </S.InstaWrapper>
+      }
       <S.MoreButton to={"/gallery"}>
         더보기
         <IoArrowForward />

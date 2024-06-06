@@ -35,3 +35,12 @@ export const SeeMoreContainer = styled.button`
   gap: 12px;
   margin: 20px auto;
 `;
+
+export const ErrorNotice = styled.p`
+  text-align: center;
+  font-family: "NanumSquareNeo";
+  color: ${({theme}) => theme.color.secondary_light};
+  font-size: 24px;
+  padding:20px;
+  font-weight: 600;
+`
